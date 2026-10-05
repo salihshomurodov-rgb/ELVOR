@@ -64,6 +64,9 @@
 
         .hero-content {
             max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero small {
@@ -73,11 +76,13 @@
             font-size: 12px;
         }
 
-        .hero h1 {
-            font-size: clamp(50px, 9vw, 110px);
-            letter-spacing: 18px;
-            margin: 20px 0;
-            font-weight: 300;
+        /* O'RTADAGI LOGOTIP UCHUN STIL */
+        .hero-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 25px 0;
         }
 
         .hero p {
@@ -169,7 +174,8 @@
         .product-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 10px;
         }
 
         .click-hint {
@@ -253,7 +259,8 @@
         .modal-gallery img, .modal-gallery video {
             width: 100%;
             height: 220px;
-            object-fit: cover;
+            object-fit: contain;
+            background: #000;
             border: 1px solid #222;
         }
 
@@ -380,7 +387,8 @@
 <section class="hero" id="home">
     <div class="hero-content">
         <small>ELVOR 5 TIMEPIECES</small>
-        <h1>ELVOR 5</h1>
+        <!-- Matn o'rniga logo qo'yildi -->
+        <img src="logo.png" alt="ELVOR 5 Logo" class="hero-logo">
         <p>Klassik. Minimal. Vaqtdan ustun. Erkaklar uchun yaratilgan premium soatlar kolleksiyasi.</p>
         <a href="#collection" class="btn-main">Kolleksiyani ko‘rish</a>
     </div>
