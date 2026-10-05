@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELVOR — Premium Watches</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+        }
+
+        header {
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            background: rgba(5,5,5,0.95);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at center, #1a1a1a 0%, #050505 55%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero small {
+            color: #aaa;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 120px);
+            letter-spacing: 15px;
+            margin: 25px 0;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 35px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #ccc;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            letter-spacing: 4px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 15px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            background: #101010;
+            border: 1px solid #222;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            border-color: #555;
+        }
+
+        .product-image {
+            height: 330px;
+            background: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .product h3 {
+            margin-top: 25px;
+            font-size: 20px;
+        }
+
+        .product p {
+            color: #888;
+            margin-top: 8px;
+        }
+
+        .price {
+            display: block;
+            margin-top: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #999;
+            line-height: 1.9;
+            margin-top: 25px;
+            font-size: 17px;
+        }
+
+        footer {
+            border-top: 1px solid #222;
+            padding: 40px 7%;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                letter-spacing: 8px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ELVOR</div>
+
+    <nav>
+        <a href="#home">Bosh sahifa</a>
+        <a href="#collection">Soatlar</a>
+        <a href="#about">Biz haqimizda</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <small>ELVOR WATCHES</small>
+
+        <h1>ELVOR</h1>
+
+        <p>
+            Klassik. Minimal. Vaqtdan ustun.
+            Erkaklar uchun yaratilgan premium soatlar.
+        </p>
+
+        <a href="#collection" class="button">
+            KOLLEKSIYANI KO‘RISH
+        </a>
+
+    </div>
+</section>
+
+
+<section id="collection">
+
+    <div class="section-title">
+        <h2>COLLECTION</h2>
+        <p>ELVOR premium soatlar kolleksiyasi</p>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+                SOAT RASMI
+            </div>
+
+            <h3>ELVOR CLASSIC</h3>
+
+            <p>
+                Minimal va klassik dizayn.
+            </p>
+
+            <span class="price">
+                700 000 so‘m
+            </span>
+
+            <a href="https://instagram.com/" class="button">
+                BUYURTMA BERISH
+            </a>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                SOAT RASMI
+            </div>
+
+            <h3>ELVOR BLACK</h3>
+
+            <p>
+                Kuchli va zamonaviy xarakter.
+            </p>
+
+            <span class="price">
+                700 000 so‘m
+            </span>
+
+            <a href="https://instagram.com/" class="button">
+                BUYURTMA BERISH
+            </a>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                SOAT RASMI
+            </div>
+
+            <h3>ELVOR SIGNATURE</h3>
+
+            <p>
+                Premium ko‘rinish va minimalizm.
+            </p>
+
+            <span class="price">
+                700 000 so‘m
+            </span>
+
+            <a href="https://instagram.com/" class="button">
+                BUYURTMA BERISH
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="section-title">
+            <h2>ELVOR</h2>
+        </div>
+
+        <p>
+            ELVOR — erkaklar uchun klassik va minimal
+            soatlar yaratishga intilayotgan yangi avlod brendi.
+        </p>
+
+        <p>
+            Bizning maqsadimiz — oddiy aksessuar emas,
+            balki erkak xarakterini ifodalovchi soat yaratish.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+    © 2026 ELVOR. All rights reserved.
+</footer>
+
+</body>
+</html>
