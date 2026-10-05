@@ -27,7 +27,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             position: sticky;
             top: 0;
-            background: rgba(3,3,3,0.9);
+            background: rgba(3,3,3,0.95);
             backdrop-filter: blur(10px);
             z-index: 100;
         }
@@ -63,7 +63,7 @@
             background: radial-gradient(circle at center, #1a1a1a 0%, #030303 65%);
         }
 
-        .hero-content max-width {
+        .hero-content {
             max-width: 900px;
         }
 
@@ -92,7 +92,7 @@
 
         .btn-main {
             display: inline-block;
-            padding: 16px 40px;
+            padding: 15px 35px;
             background: #fff;
             color: #000;
             text-decoration: none;
@@ -103,6 +103,7 @@
             transition: 0.3s;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-main:hover {
@@ -111,12 +112,12 @@
         }
 
         section {
-            padding: 120px 7%;
+            padding: 100px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
@@ -148,6 +149,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            cursor: pointer;
         }
 
         .product:hover {
@@ -156,18 +158,31 @@
         }
 
         .product-image {
-            height: 360px;
+            height: 350px;
             background: #141414;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
-        .product-image video {
+        .product-image video, 
+        .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .click-hint {
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .product h3 {
@@ -184,26 +199,67 @@
             line-height: 1.7;
         }
 
-        .features {
-            margin-top: 18px;
-            list-style: none;
-            color: #aaa;
-            font-size: 13px;
-            line-height: 1.8;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 15px;
-        }
-
         .price {
             display: block;
-            margin-top: 25px;
+            margin-top: 20px;
             font-size: 24px;
             font-weight: 600;
             letter-spacing: 1px;
             color: #fff;
         }
 
-        /* Order Form Section */
+        /* Modal Galereya / Ma'lumot oynasi */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(8px);
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #111;
+            border: 1px solid #333;
+            padding: 35px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover { color: #fff; }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .modal-gallery img, .modal-gallery video {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 1px solid #222;
+        }
+
+        /* So'rovnoma formasi */
         .order-section {
             background: #0a0a0a;
             border-top: 1px solid rgba(255,255,255,0.08);
@@ -240,12 +296,6 @@
             color: #fff;
             font-size: 14px;
             outline: none;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus {
-            border-color: #777;
         }
 
         .payment-box {
@@ -339,75 +389,117 @@
 <section id="collection">
     <div class="section-title">
         <h2>Kolleksiya</h2>
-        <p>Tanlangan eksklyuziv modellar</p>
+        <p>Batafsil ko'rish uchun istalgan soatni bosing</p>
     </div>
 
     <div class="products">
         <!-- 1-chi Mahsulot: REWARD -->
-        <div class="product">
+        <div class="product" onclick="openModal('rewardModal')">
             <div>
                 <div class="product-image">
                     <video autoplay muted loop playsinline>
                         <source src="reward4.mp4" type="video/mp4">
                     </video>
+                    <div class="click-hint">Batafsil / Rasmlar</div>
                 </div>
                 <h3>REWARD LUXURY CHRONOGRAPH</h3>
                 <p>Kuchli va zamonaviy xarakterga ega, yuqori darajadagi sport va klassik dizayndagi kvars soat.</p>
-                <ul class="features">
-                    <li>✅ Suv o'tkazmaydigan dizayn (3BAR)</li>
-                    <li>✅ Yorug'lik tarqatuvchi qo'llar</li>
-                    <li>✅ Sana ko'rsatkichi funksiyasi</li>
-                    <li>✅ Sifatli qotishma korpus</li>
-                </ul>
             </div>
             <div>
                 <span class="price">700 000 so‘m</span>
-                <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:20px;">Tanlash</a>
+                <span class="btn-main" style="display:block; margin-top:20px;">Batafsil ko'rish</span>
             </div>
         </div>
 
         <!-- 2-chi Mahsulot: TISSOT PRX -->
-        <div class="product">
+        <div class="product" onclick="openModal('tissotModal')">
             <div>
                 <div class="product-image">
                     <video autoplay muted loop playsinline>
                         <source src="tissot5.mp4" type="video/mp4">
                     </video>
+                    <div class="click-hint">Batafsil / Rasmlar</div>
                 </div>
                 <h3>TISSOT PRX</h3>
                 <p>Nafis dizayn, yuqori sifat va zamonaviy uslubni o‘zida mujassam etgan erkaklar qo‘l soati.</p>
-                <ul class="features">
-                    <li>✅ Mustahkam mineral shisha</li>
-                    <li>✅ Zanglamas po'latdan korpus va braslet</li>
-                    <li>✅ Kapalakli (Butterfly) qulf</li>
-                    <li>✅ Suv o'tkazmaydigan sinf 3ATM</li>
-                </ul>
             </div>
             <div>
                 <span class="price">300 000 so‘m</span>
-                <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:20px;">Tanlash</a>
+                <span class="btn-main" style="display:block; margin-top:20px;">Batafsil ko'rish</span>
             </div>
         </div>
     </div>
 </section>
 
+<!-- REWARD MODAL (Batafsil va boshqa rasmlar) -->
+<div id="rewardModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('rewardModal')">&times;</button>
+        <h2 style="letter-spacing: 2px; margin-bottom: 15px;">REWARD LUXURY CHRONOGRAPH</h2>
+        <p style="color: #aaa; line-height: 1.7; font-size: 14px;">
+            Kuchli va zamonaviy xarakterga ega, yuqori darajadagi sport va klassik dizayndagi kvars soat. Kundalik foydalanish va maxsus tadbirlar uchun eng yaxshi tanlov.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; color: #ccc; font-size: 14px; line-height: 1.8;">
+            <li>Suv o'tkazmaydigan dizayn (3BAR)</li>
+            <li>Yorug'lik tarqatuvchi qo'llar (Luminous Hands)</li>
+            <li>Sana ko'rsatkichi funksiyasi</li>
+            <li>Sifatli qotishma korpus (Alloy)</li>
+        </ul>
+        <h4 style="margin-top: 20px; letter-spacing: 1px; color: #888; font-size: 12px; text-transform: uppercase;">Boshqa rasmlar va ko'rinishlar:</h4>
+        <div class="modal-gallery">
+            <video autoplay muted loop playsinline><source src="reward4.mp4" type="video/mp4"></video>
+            <img src="reward.jpg" alt="Reward watch">
+            <img src="reward1.jpg" alt="Reward watch">
+            <img src="reward2.jpg" alt="Reward watch">
+        </div>
+        <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:30px;" onclick="closeModal('rewardModal'); selectModel('REWARD LUXURY CHRONOGRAPH (700 000 so\'m)')">Bu soatni buyurtma qilish</a>
+    </div>
+</div>
+
+<!-- TISSOT MODAL (Batafsil va boshqa rasmlar) -->
+<div id="tissotModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('tissotModal')">&times;</button>
+        <h2 style="letter-spacing: 2px; margin-bottom: 15px;">TISSOT PRX</h2>
+        <p style="color: #aaa; line-height: 1.7; font-size: 14px;">
+            Nafis dizayn, yuqori sifat va zamonaviy uslubni o‘zida mujassam etgan erkaklar qo‘l soati. Biznes uchrashuvlar va kundalik uslub uchun mukammal tanlov.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; color: #ccc; font-size: 14px; line-height: 1.8;">
+            <li>Mustahkam mineral shisha (tirnalishga chidamli)</li>
+            <li>Zanglamas po'latdan korpus va braslet</li>
+            <li>Qulay va ishonchli kapalakli (Butterfly) qulf</li>
+            <li>Suv o'tkazmaydigan sinf 3ATM</li>
+        </ul>
+        <h4 style="margin-top: 20px; letter-spacing: 1px; color: #888; font-size: 12px; text-transform: uppercase;">Boshqa rasmlar va ko'rinishlar:</h4>
+        <div class="modal-gallery">
+            <video autoplay muted loop playsinline><source src="tissot5.mp4" type="video/mp4"></video>
+            <img src="tissot.webp" alt="Tissot watch">
+            <img src="tissot1.webp" alt="Tissot watch">
+            <img src="tissot2.webp" alt="Tissot watch">
+            <img src="tissot3.webp" alt="Tissot watch">
+            <img src="tissot4.webp" alt="Tissot watch">
+        </div>
+        <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:30px;" onclick="closeModal('tissotModal'); selectModel('TISSOT PRX (300 000 so\'m)')">Bu soatni buyurtma qilish</a>
+    </div>
+</div>
+
 <!-- Buyurtma / So‘rovnoma Formasi -->
 <section class="order-section" id="order">
     <div class="section-title">
         <h2>Buyurtma berish</h2>
-        <p>Ma'lumotlaringizni kiriting va Telegram orqali yuboring</p>
+        <p>So'rovnomani to'ldiring va to'lovni amalga oshiring</p>
     </div>
 
     <div class="order-container">
         <div class="payment-box">
             <h4>TO'LOV KARTASI (UZUM)</h4>
-            <p>Buyurtmani rasmiylashtirish uchun avval quyidagi karta raqamiga to'lov qiling va chek rasmini saqlab qo'ying:</p>
+            <p>Buyurtmani rasmiylashtirish uchun quyidagi karta raqamiga to'lov qiling va chek rasmini saqlab qo'ying:</p>
             <div class="card-code">4916 9903 6410 2761</div>
         </div>
 
         <form id="orderForm" onsubmit="sendToTelegram(event)">
             <div class="form-group">
-                <label>Soatni tanlang</label>
+                <label>Tanlangan soat</label>
                 <select id="watchModel" required>
                     <option value="REWARD LUXURY CHRONOGRAPH (700 000 so'm)">REWARD LUXURY CHRONOGRAPH — 700 000 so'm</option>
                     <option value="TISSOT PRX (300 000 so'm)">TISSOT PRX — 300 000 so'm</option>
@@ -431,10 +523,10 @@
 
             <div class="form-group">
                 <label>BTS Pochta manzili / Bo'limi</label>
-                <input type="text" id="btsAddress" placeholder="Masalan: BTS pochta filiali raqami yoki manzili" required>
+                <input type="text" id="btsAddress" placeholder="Masalan: BTS filiali manzili" required>
             </div>
 
-            <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px;">Telegramga yuborish va Chekni ilova qilish</button>
+            <button type="submit" class="btn-main" style="width: 100%;">Telegramga buyurtma yuborish va Chekni ilova qilish</button>
         </form>
     </div>
 </section>
@@ -455,6 +547,24 @@
 </footer>
 
 <script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+
+    function selectModel(modelName) {
+        const select = document.getElementById('watchModel');
+        for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.includes(modelName.split(' ')[0])) {
+                select.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
     function sendToTelegram(event) {
         event.preventDefault();
         
@@ -468,6 +578,13 @@
 
         const url = `https://t.me/Salihshomurodov?text=${text}`;
         window.open(url, '_blank');
+    }
+
+    // Modal tashqarisiga bosganda yopilishi
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
     }
 </script>
 
