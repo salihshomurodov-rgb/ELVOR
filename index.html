@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ELVOR — Premium Watches</title>
-
+    <title>ELVOR — Premium Soatlar</title>
     <style>
         * {
             margin: 0;
@@ -56,8 +54,7 @@
             justify-content: center;
             text-align: center;
             padding: 60px 20px;
-            background:
-                radial-gradient(circle at center, #1a1a1a 0%, #050505 55%);
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 55%);
         }
 
         .hero-content {
@@ -86,13 +83,15 @@
 
         .button {
             display: inline-block;
-            margin-top: 35px;
-            padding: 15px 35px;
+            margin-top: 25px;
+            padding: 14px 30px;
             background: #fff;
             color: #000;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
+            text-align: center;
+            width: 100%;
         }
 
         .button:hover {
@@ -121,7 +120,7 @@
 
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -130,6 +129,9 @@
             border: 1px solid #222;
             padding: 20px;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product:hover {
@@ -140,28 +142,78 @@
         .product-image {
             height: 330px;
             background: #181818;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #555;
-            font-size: 14px;
+        }
+
+        .product-image img, 
+        .product-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product h3 {
             margin-top: 25px;
-            font-size: 20px;
+            font-size: 22px;
+            letter-spacing: 1px;
         }
 
         .product p {
+            color: #aaa;
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .features {
+            margin-top: 15px;
+            list-style: none;
             color: #888;
-            margin-top: 8px;
+            font-size: 13px;
+            line-height: 1.6;
         }
 
         .price {
             display: block;
-            margin-top: 18px;
-            font-size: 20px;
+            margin-top: 20px;
+            font-size: 22px;
             font-weight: bold;
+            color: #fff;
+        }
+
+        .payment-info {
+            background: #181818;
+            border: 1px dashed #444;
+            padding: 25px;
+            margin-top: 50px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .payment-info h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .payment-info p {
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .card-number {
+            font-weight: bold;
+            color: #fff;
+            background: #252525;
+            padding: 5px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
+            letter-spacing: 2px;
         }
 
         .about {
@@ -188,28 +240,23 @@
             header {
                 padding: 20px;
             }
-
             nav a {
                 margin-left: 10px;
                 font-size: 12px;
             }
-
             .hero h1 {
                 letter-spacing: 8px;
             }
-
             section {
                 padding: 70px 20px;
             }
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <div class="logo">ELVOR</div>
-
     <nav>
         <a href="#home">Bosh sahifa</a>
         <a href="#collection">Soatlar</a>
@@ -221,130 +268,97 @@
 
 <section class="hero" id="home">
     <div class="hero-content">
-
         <small>ELVOR WATCHES</small>
-
         <h1>ELVOR</h1>
-
         <p>
-            Klassik. Minimal. Vaqtdan ustun.
+            Klassik. Minimal. Vaqtdan ustun.<br>
             Erkaklar uchun yaratilgan premium soatlar.
         </p>
-
-        <a href="#collection" class="button">
-            KOLLEKSIYANI KO‘RISH
-        </a>
-
+        <a href="#collection" class="button">KOLLEKSIYANI KO‘RISH</a>
     </div>
 </section>
 
-
 <section id="collection">
-
     <div class="section-title">
-        <h2>COLLECTION</h2>
+        <h2>KOLLEKSIYA</h2>
         <p>ELVOR premium soatlar kolleksiyasi</p>
     </div>
 
     <div class="products">
 
+        <!-- 1-chi Mahsulot: REWARD -->
         <div class="product">
-
-            <div class="product-image">
-                SOAT RASMI
+            <div>
+                <div class="product-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="reward4.mp4" type="video/mp4">
+                        Sizning brauzeringiz videoni qo'llab-quvvatlamaydi.
+                    </video>
+                </div>
+                <h3>REWARD LUXURY CHRONOGRAPH</h3>
+                <p>Kuchli va zamonaviy xarakterga ega, yuqori darajadagi sport va klassik dizayndagi kvars soat[cite: 4].</p>
+                <ul class="features">
+                    <li>✅ Suv o'tkazmaydigan dizayn (3BAR)[cite: 4]</li>
+                    <li>✅ Yorug'lik tarqatuvchi qo'llar (Luminous Hands)[cite: 4]</li>
+                    <li>✅ Sana ko'rsatkichi funksiyasi[cite: 4]</li>
+                    <li>✅ Sifatli qotishma korpus (Alloy)[cite: 4]</li>
+                </ul>
             </div>
-
-            <h3>ELVOR CLASSIC</h3>
-
-            <p>
-                Minimal va klassik dizayn.
-            </p>
-
-            <span class="price">
-                700 000 so‘m
-            </span>
-
-            <a href="https://instagram.com/" class="button">
-                BUYURTMA BERISH
-            </a>
-
+            <div>
+                <span class="price">700 000 so‘m</span>
+                <a href="https://t.me/Salihshomurodov?text=Salom!%20REWARD%20soatini%20sotib%20olmoqchiman.%0AIsmim:%20%0AFamilyam:%20%0AViloyat%20va%20shahar:%20%0ABTS%20pochta%20manzili:%20%0ATolov%20cheki%20(rasm):" class="button">BUYURTMA BERISH</a>
+            </div>
         </div>
 
-
+        <!-- 2-chi Mahsulot: TISSOT PRX -->
         <div class="product">
-
-            <div class="product-image">
-                SOAT RASMI
+            <div>
+                <div class="product-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="tissot5.mp4" type="video/mp4">
+                        Sizning brauzeringiz videoni qo'llab-quvvatlamaydi.
+                    </video>
+                </div>
+                <h3>TISSOT PRX</h3>
+                <p>Nafis dizayn, yuqori sifat va zamonaviy uslubni o‘zida mujassam etgan erkaklar qo‘l soati. Kundalik va biznes uchrashuvlar uchun mukammal tanlov.</p>
+                <ul class="features">
+                    <li>✅ Mustahkam mineral shisha (tirnalishga chidamli)</li>
+                    <li>✅ Zanglamas po'latdan korpus va braslet</li>
+                    <li>✅ Qulay va ishonchli kapalakli (Butterfly) qulf</li>
+                    <li>✅ Suv o'tkazmaydigan sinf 3ATM</li>
+                </ul>
             </div>
-
-            <h3>ELVOR BLACK</h3>
-
-            <p>
-                Kuchli va zamonaviy xarakter.
-            </p>
-
-            <span class="price">
-                700 000 so‘m
-            </span>
-
-            <a href="https://instagram.com/" class="button">
-                BUYURTMA BERISH
-            </a>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-                SOAT RASMI
+            <div>
+                <span class="price">300 000 so‘m</span>
+                <a href="https://t.me/Salihshomurodov?text=Salom!%20TISSOT%20PRX%20soatini%20sotib%20olmoqchiman.%0AIsmim:%20%0AFamilyam:%20%0AViloyat%20va%20shahar:%20%0ABTS%20pochta%20manzili:%20%0ATolov%20cheki%20(rasm):" class="button">BUYURTMA BERISH</a>
             </div>
-
-            <h3>ELVOR SIGNATURE</h3>
-
-            <p>
-                Premium ko‘rinish va minimalizm.
-            </p>
-
-            <span class="price">
-                700 000 so‘m
-            </span>
-
-            <a href="https://instagram.com/" class="button">
-                BUYURTMA BERISH
-            </a>
-
         </div>
 
     </div>
 
+    <!-- To'lov va yetkazib berish bo'limi -->
+    <div class="payment-info">
+        <h3>TO'LOV VA YETKAZIB BERISH TARTIBI</h3>
+        <p>Buyurtma berish tugmasini bosgach, ochilgan Telegram chatiga ism-familiyangiz, viloyat va shahringizni, BTS pochta manzilingizni yozing hamda quyidagi Uzum karta raqamiga to'lov qilib, chek rasmini yuboring:</p>
+        <div class="card-number">4916 9903 6410 2761</div>
+    </div>
 </section>
 
-
 <section id="about">
-
     <div class="about">
-
         <div class="section-title">
             <h2>ELVOR</h2>
         </div>
-
         <p>
-            ELVOR — erkaklar uchun klassik va minimal
-            soatlar yaratishga intilayotgan yangi avlod brendi.
+            ELVOR — erkaklar uchun klassik va minimal soatlar yaratishga intilayotgan yangi avlod brendi.
         </p>
-
         <p>
-            Bizning maqsadimiz — oddiy aksessuar emas,
-            balki erkak xarakterini ifodalovchi soat yaratish.
+            Bizning maqsadimiz — oddiy aksessuar emas, balki erkak xarakterini ifodalovchi sifatli soat taqdim etish.
         </p>
-
     </div>
-
 </section>
 
 </main>
-
 
 <footer>
     © 2026 ELVOR. All rights reserved.
