@@ -167,7 +167,6 @@
             position: relative;
         }
 
-        .product-image video, 
         .product-image img {
             width: 100%;
             height: 100%;
@@ -397,9 +396,7 @@
         <div class="product" onclick="openModal('rewardModal')">
             <div>
                 <div class="product-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="reward4.mp4" type="video/mp4">
-                    </video>
+                    <img src="reward.jpg" alt="Reward Watch">
                     <div class="click-hint">Batafsil / Rasmlar</div>
                 </div>
                 <h3>REWARD LUXURY CHRONOGRAPH</h3>
@@ -415,9 +412,7 @@
         <div class="product" onclick="openModal('tissotModal')">
             <div>
                 <div class="product-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="tissot5.mp4" type="video/mp4">
-                    </video>
+                    <img src="tissot.webp" alt="Tissot PRX">
                     <div class="click-hint">Batafsil / Rasmlar</div>
                 </div>
                 <h3>TISSOT PRX</h3>
@@ -447,10 +442,10 @@
         </ul>
         <h4 style="margin-top: 20px; letter-spacing: 1px; color: #888; font-size: 12px; text-transform: uppercase;">Boshqa rasmlar va ko'rinishlar:</h4>
         <div class="modal-gallery">
-            <video autoplay muted loop playsinline><source src="reward4.mp4" type="video/mp4"></video>
             <img src="reward.jpg" alt="Reward watch">
             <img src="reward1.jpg" alt="Reward watch">
             <img src="reward2.jpg" alt="Reward watch">
+            <video autoplay muted loop playsinline><source src="reward4.mp4" type="video/mp4"></video>
         </div>
         <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:30px;" onclick="closeModal('rewardModal'); selectModel('REWARD LUXURY CHRONOGRAPH (700 000 so\'m)')">Bu soatni buyurtma qilish</a>
     </div>
@@ -472,12 +467,12 @@
         </ul>
         <h4 style="margin-top: 20px; letter-spacing: 1px; color: #888; font-size: 12px; text-transform: uppercase;">Boshqa rasmlar va ko'rinishlar:</h4>
         <div class="modal-gallery">
-            <video autoplay muted loop playsinline><source src="tissot5.mp4" type="video/mp4"></video>
             <img src="tissot.webp" alt="Tissot watch">
             <img src="tissot1.webp" alt="Tissot watch">
             <img src="tissot2.webp" alt="Tissot watch">
             <img src="tissot3.webp" alt="Tissot watch">
             <img src="tissot4.webp" alt="Tissot watch">
+            <video autoplay muted loop playsinline><source src="tissot5.mp4" type="video/mp4"></video>
         </div>
         <a href="#order" class="btn-main" style="display:block; text-align:center; margin-top:30px;" onclick="closeModal('tissotModal'); selectModel('TISSOT PRX (300 000 so\'m)')">Bu soatni buyurtma qilish</a>
     </div>
@@ -580,7 +575,6 @@
         window.open(url, '_blank');
     }
 
-    // Modal tashqarisiga bosganda yopilishi
     window.onclick = function(event) {
         if (event.target.classList.contains('modal')) {
             event.target.style.display = 'none';
