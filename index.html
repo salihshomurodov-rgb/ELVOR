@@ -426,13 +426,13 @@
     </div>
 </section>
 
-<!-- REWARD MODAL (Batafsil va boshqa rasmlar) -->
+<!-- REWARD MODAL -->
 <div id="rewardModal" class="modal">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('rewardModal')">&times;</button>
         <h2 style="letter-spacing: 2px; margin-bottom: 15px;">REWARD LUXURY CHRONOGRAPH</h2>
         <p style="color: #aaa; line-height: 1.7; font-size: 14px;">
-            Kuchli va zamonaviy xarakterga ega, yuqori darajadagi sport va klassik dizayndagi kvars soat. Kundalik foydalanish va maxsus tadbirlar uchun eng yaxshi tanlov.
+            Kuchli va zamonaviy xarakterga ega, yuqori darajadagi sport va klassik dizayndagi kvars soat.
         </p>
         <ul style="margin: 20px 0 20px 20px; color: #ccc; font-size: 14px; line-height: 1.8;">
             <li>Suv o'tkazmaydigan dizayn (3BAR)</li>
@@ -451,13 +451,13 @@
     </div>
 </div>
 
-<!-- TISSOT MODAL (Batafsil va boshqa rasmlar) -->
+<!-- TISSOT MODAL -->
 <div id="tissotModal" class="modal">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('tissotModal')">&times;</button>
         <h2 style="letter-spacing: 2px; margin-bottom: 15px;">TISSOT PRX</h2>
         <p style="color: #aaa; line-height: 1.7; font-size: 14px;">
-            Nafis dizayn, yuqori sifat va zamonaviy uslubni o‘zida mujassam etgan erkaklar qo‘l soati. Biznes uchrashuvlar va kundalik uslub uchun mukammal tanlov.
+            Nafis dizayn, yuqori sifat va zamonaviy uslubni o‘zida mujassam etgan erkaklar qo‘l soati.
         </p>
         <ul style="margin: 20px 0 20px 20px; color: #ccc; font-size: 14px; line-height: 1.8;">
             <li>Mustahkam mineral shisha (tirnalishga chidamli)</li>
@@ -512,13 +512,36 @@
             </div>
 
             <div class="form-group">
-                <label>Viloyat va Shahar / Tuman</label>
-                <input type="text" id="city" placeholder="Masalan: Toshkent shahri" required>
+                <label>Telefon raqamingiz</label>
+                <input type="tel" id="phone" placeholder="Masalan: +998 90 123 45 67" required>
             </div>
 
             <div class="form-group">
-                <label>BTS Pochta manzili / Bo'limi</label>
-                <input type="text" id="btsAddress" placeholder="Masalan: BTS filiali manzili" required>
+                <label>Viloyatni tanlang</label>
+                <select id="regionSelect" onchange="updateBtsDistricts()" required>
+                    <option value="">Viloyatni tanlang...</option>
+                    <option value="Toshkent shahri">Toshkent shahri</option>
+                    <option value="Toshkent viloyati">Toshkent viloyati</option>
+                    <option value="Samarqand viloyati">Samarqand viloyati</option>
+                    <option value="Buxoro viloyati">Buxoro viloyati</option>
+                    <option value="Farg'ona viloyati">Farg'ona viloyati</option>
+                    <option value="Andijon viloyati">Andijon viloyati</option>
+                    <option value="Namangan viloyati">Namangan viloyati</option>
+                    <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+                    <option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
+                    <option value="Jizzax viloyati">Jizzax viloyati</option>
+                    <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+                    <option value="Navoiy viloyati">Navoiy viloyati</option>
+                    <option value="Xorazm viloyati">Xorazm viloyati</option>
+                    <option value="Qoraqalpog'iston Respublikasi">Qoraqalpog'iston Respublikasi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>BTS pochta bo'limi / Tuman</label>
+                <select id="btsDistrict" required>
+                    <option value="">Avval viloyatni tanlang...</option>
+                </select>
             </div>
 
             <button type="submit" class="btn-main" style="width: 100%;">Telegramga buyurtma yuborish va Chekni ilova qilish</button>
@@ -542,6 +565,40 @@
 </footer>
 
 <script>
+    const btsData = {
+        "Toshkent shahri": ["Chilonzor BTS", "Yunusobod BTS", "Mirzo Ulug'bek BTS", "Chorsu BTS", "Sergeli BTS", "Shayxontohur BTS", "Mirobod BTS"],
+        "Toshkent viloyati": ["Chinoz BTS", "Chirchiq BTS", "Olmaliq BTS", "Angren BTS", "Yangiyo'l BTS", "Zangiota BTS", "Keles BTS"],
+        "Samarqand viloyati": ["Samarqand shahar BTS", "Kattaqo'rg'on BTS", "Urgut BTS", "Bulung'ur BTS", "Jomboy BTS"],
+        "Buxoro viloyati": ["Buxoro shahar BTS", "G'ijduvon BTS", "Kogon BTS", "Vobkent BTS", "Jondor BTS"],
+        "Farg'ona viloyati": ["Farg'ona shahar BTS", "Qo'qon BTS", "Marg'ilon BTS", "Quva BTS", "Rishton BTS"],
+        "Andijon viloyati": ["Andijon shahar BTS", "Asaka BTS", "Xonobod BTS", "Shahrixon BTS", "Qo'rg'ontepa BTS"],
+        "Namangan viloyati": ["Namangan shahar BTS", "Chust BTS", "Uchqo'rg'on BTS", "Pop BTS", "Kosonsoy BTS"],
+        "Qashqadaryo viloyati": ["Qarshi shahar BTS", "Shahrisabz BTS", "Kitob BTS", "G'uzor BTS", "Koson BTS"],
+        "Surxondaryo viloyati": ["Termiz shahar BTS", "Denov BTS", "Sherobod BTS", "Qumqo'rg'on BTS", "Angor BTS"],
+        "Jizzax viloyati": ["Jizzax shahar BTS", "G'allaorol BTS", "Zafarobod BTS", "Paxtakor BTS", "Do'stlik BTS"],
+        "Sirdaryo viloyati": ["Guliston shahar BTS", "Yangiyer BTS", "Shirin BTS", "Sirdaryo tuman BTS"],
+        "Navoiy viloyati": ["Navoiy shahar BTS", "Zarafshon BTS", "Qiziltepa BTS", "Karmana BTS", "Nurota BTS"],
+        "Xorazm viloyati": ["Urganch shahar BTS", "Xiva BTS", "Shovot BTS", "Gurlan BTS", "Hazorasp BTS"],
+        "Qoraqalpog'iston Respublikasi": ["Nukus shahar BTS", "To'rtko'l BTS", "Beruniy BTS", "Xo'jayli BTS", "Chimboy BTS"]
+    };
+
+    function updateBtsDistricts() {
+        const regionSelect = document.getElementById('regionSelect');
+        const btsDistrictSelect = document.getElementById('btsDistrict');
+        const selectedRegion = regionSelect.value;
+
+        btsDistrictSelect.innerHTML = '<option value="">BTS tumanini tanlang...</option>';
+
+        if (selectedRegion && btsData[selectedRegion]) {
+            btsData[selectedRegion].forEach(district => {
+                const option = document.createElement('option');
+                option.value = district;
+                option.textContent = district;
+                btsDistrictSelect.appendChild(option);
+            });
+        }
+    }
+
     function openModal(modalId) {
         document.getElementById(modalId).style.display = 'block';
     }
@@ -566,10 +623,11 @@
         const model = document.getElementById('watchModel').value;
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
-        const city = document.getElementById('city').value;
-        const btsAddress = document.getElementById('btsAddress').value;
+        const phone = document.getElementById('phone').value;
+        const region = document.getElementById('regionSelect').value;
+        const bts = document.getElementById('btsDistrict').value;
 
-        const text = `Salom! Yangi buyurtma:%0A%0A⌚ Model: ${model}%0A👤 Ism: ${firstName}%0A👥 Familiya: ${lastName}%0A📍 Viloyat/Shahar: ${city}%0A📦 BTS Pochta: ${btsAddress}%0A%0A(To'lov cheki rasmini quyida yuboryapman):`;
+        const text = `Salom! Yangi buyurtma:%0A%0A⌚ Model: ${model}%0A👤 Ism: ${firstName}%0A👥 Familiya: ${lastName}%0A📞 Tel: ${phone}%0A📍 Viloyat: ${region}%0A📦 BTS Pochta: ${bts}%0A%0A(To'lov cheki rasmini quyida yuboryapman):`;
 
         const url = `https://t.me/Salihshomurodov?text=${text}`;
         window.open(url, '_blank');
