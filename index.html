@@ -2,649 +2,351 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <title>ELVOR — Premium erkaklar soatlari</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>ELVOR — Premium erkaklar soatlari</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 17px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      border-bottom: 1px solid #292929;
-      background: rgba(5,5,5,.96);
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 6px;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 78px 20px;
-      background: radial-gradient(ellipse at center, #222 0%, #050505 72%);
-    }
-
-    .eyebrow {
-      color: #aaa;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 8vw, 72px);
-      letter-spacing: 7px;
-      font-weight: 400;
-      line-height: 1.15;
-      margin: 20px 0;
-    }
-
-    .hero p {
-      color: #aaa;
-      margin: 0 auto 25px;
-      max-width: 550px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #fff;
-      color: #050505;
-      padding: 12px 18px;
-      border: 1px solid #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 12px;
-      letter-spacing: 1px;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background: #ddd;
-    }
-
-    section {
-      padding: 55px 6%;
-    }
-
-    .heading {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .heading h2 {
-      font-size: clamp(24px, 4vw, 34px);
-      font-weight: 400;
-      letter-spacing: 3px;
-    }
-
-    .heading p {
-      color: #888;
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-      gap: 20px;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .product {
-      background: #101010;
-      border: 1px solid #292929;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .product img.main {
-      width: 100%;
-      height: 275px;
-      object-fit: contain;
-      background: #080808;
-    }
-
-    .tag {
-      color: #aaa;
-      font-size: 10px;
-      letter-spacing: 2px;
-      margin-top: 13px;
-      text-transform: uppercase;
-    }
-
-    .product h3 {
-      font-size: 17px;
-      font-weight: 500;
-      margin-top: 8px;
-    }
-
-    .product p {
-      color: #999;
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    .price {
-      font-size: 23px;
-      font-weight: bold;
-      display: block;
-      margin: 14px 0;
-    }
-
-    .delivery {
-      font-size: 12px !important;
-      color: #ccc !important;
-      margin: 0 0 14px !important;
-    }
-
-    details {
-      margin: 10px 0 16px;
-      color: #bbb;
-      font-size: 13px;
-    }
-
-    summary {
-      cursor: pointer;
-      color: #fff;
-      padding: 9px 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 140px;
-      object-fit: contain;
-      background: #080808;
-      border: 1px solid #222;
-    }
-
-    .specs {
-      padding-left: 18px;
-      line-height: 1.9;
-      color: #ccc;
-    }
-
-    .order-section {
-      background: #0b0b0b;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-    }
-
-    form {
-      max-width: 620px;
-      margin: auto;
-      padding: 22px;
-      background: #101010;
-      border: 1px solid #292929;
-    }
-
-    label {
-      display: block;
-      color: #bbb;
-      font-size: 11px;
-      letter-spacing: 1px;
-      margin: 12px 0 5px;
-      text-transform: uppercase;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      background: #080808;
-      border: 1px solid #333;
-      color: #fff;
-      font: inherit;
-      border-radius: 0;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: 1px solid #999;
-    }
-
-    form .button {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .note {
-      max-width: 620px;
-      margin: 0 auto 18px;
-      color: #888;
-      font-size: 12px;
-    }
-
-    .about {
-      max-width: 720px;
-      margin: auto;
-      text-align: center;
-      color: #999;
-    }
-
-    .about p {
-      margin-top: 18px;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #222;
-      padding: 25px 6%;
-      color: #666;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 15px 5%;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      section {
-        padding: 42px 5%;
-      }
-
-      .product img.main {
-        height: 235px;
-      }
-
-      form {
-        padding: 17px;
-      }
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#f5f5f5;line-height:1.6}
+header{position:sticky;top:0;z-index:10;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #292929;background:rgba(5,5,5,.97)}
+.logo{font-size:25px;font-weight:bold;letter-spacing:6px;color:#fff;text-decoration:none}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#ccc;text-decoration:none;font-size:12px;letter-spacing:1px}
+nav a:hover{color:#fff}
+.hero{text-align:center;padding:78px 20px;background:radial-gradient(ellipse at center,#222 0%,#050505 72%)}
+.eyebrow{color:#aaa;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,8vw,72px);letter-spacing:7px;font-weight:400;line-height:1.15;margin:20px 0}
+.hero p{color:#aaa;margin:0 auto 25px;max-width:550px}
+.button{display:inline-block;background:#fff;color:#050505;padding:12px 18px;border:1px solid #fff;text-decoration:none;font-weight:bold;font-size:12px;letter-spacing:1px;cursor:pointer}
+.button:hover{background:#ddd}
+section{padding:55px 6%}
+.heading{text-align:center;margin-bottom:32px}
+.heading h2{font-size:clamp(24px,4vw,34px);font-weight:400;letter-spacing:3px}
+.heading p{color:#888;font-size:13px;margin-top:8px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:20px;max-width:1150px;margin:auto}
+.product{background:#101010;border:1px solid #292929;padding:16px;display:flex;flex-direction:column;min-width:0}
+.product img.main{width:100%;height:275px;object-fit:contain;background:#080808}
+.tag{color:#aaa;font-size:10px;letter-spacing:2px;margin-top:13px;text-transform:uppercase}
+.product h3{font-size:17px;font-weight:500;margin-top:8px}
+.product p{color:#999;font-size:13px;margin-top:8px}
+.price{font-size:23px;font-weight:bold;display:block;margin:14px 0}
+.delivery{font-size:12px!important;color:#ccc!important;margin:0 0 14px!important}
+details{margin:10px 0 16px;color:#bbb;font-size:13px}
+summary{cursor:pointer;color:#fff;padding:9px 0}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.gallery img{width:100%;height:140px;object-fit:contain;background:#080808;border:1px solid #222}
+.specs{padding-left:18px;line-height:1.9;color:#ccc}
+.product .button{margin-top:auto}
+.order-section{background:#0b0b0b;border-top:1px solid #222;border-bottom:1px solid #222}
+form{max-width:620px;margin:auto;padding:22px;background:#101010;border:1px solid #292929}
+label{display:block;color:#bbb;font-size:11px;letter-spacing:1px;margin:12px 0 5px;text-transform:uppercase}
+input,select,textarea{width:100%;padding:12px;background:#080808;border:1px solid #333;color:#fff;font:inherit;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:1px solid #999}
+form .button{width:100%;margin-top:20px}
+.note{max-width:620px;margin:0 auto 18px;color:#888;font-size:12px}
+.about{max-width:720px;margin:auto;text-align:center;color:#999}
+.about p{margin-top:18px}
+footer{text-align:center;border-top:1px solid #222;padding:25px 6%;color:#666;font-size:11px;letter-spacing:1px}
+@media(max-width:600px){
+header{align-items:flex-start;flex-direction:column;padding:15px 5%}
+nav{gap:12px}
+nav a{font-size:10px}
+section{padding:42px 5%}
+.product img.main{height:235px}
+form{padding:17px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <a class="logo" href="#home">ELVOR</a>
-
-  <nav>
-    <a href="#home">Bosh sahifa</a>
-    <a href="#soatlar">Soatlar</a>
-    <a href="#buyurtma">Buyurtma</a>
-    <a href="#brend">Brend haqida</a>
-  </nav>
+<a class="logo" href="#home">ELVOR</a>
+<nav>
+<a href="#home">Bosh sahifa</a>
+<a href="#soatlar">Soatlar</a>
+<a href="#buyurtma">Buyurtma</a>
+<a href="#brend">Brend haqida</a>
+</nav>
 </header>
 
 <main>
 
-  <section class="hero" id="home">
-    <div class="eyebrow">ELVOR · Erkaklar soatlari</div>
-    <h1>VAQT. USLUB.</h1>
-    <p>Klassik dizayn. Minimal ko‘rinish. O‘ziga xos xarakter.</p>
-    <a class="button" href="#soatlar">Kolleksiyani ko‘rish</a>
-  </section>
+<section class="hero" id="home">
+<div class="eyebrow">ELVOR · Erkaklar soatlari</div>
+<h1>VAQT. USLUB.</h1>
+<p>Klassik dizayn. Minimal ko‘rinish. O‘ziga xos xarakter.</p>
+<a class="button" href="#soatlar">KOLLEKSIYANI KO‘RISH</a>
+</section>
 
-  <section id="soatlar">
-    <div class="heading">
-      <h2>SOATLAR KOLLEKSIYASI</h2>
-      <p>Soatni tanlang, xususiyatlarini ko‘ring va buyurtma qoldiring.</p>
-    </div>
+<section id="soatlar">
+<div class="heading">
+<h2>SOATLAR KOLLEKSIYASI</h2>
+<p>O‘zingizga mos soatni tanlang va buyurtma qoldiring.</p>
+</div>
 
-    <div class="products">
+<div class="products">
 
-      <!-- BIRINCHI SOAT -->
-      <article class="product">
+<!-- 1-SOAT -->
+<article class="product">
+<img class="main" src="reward.jpg" alt="Reward erkaklar soati">
+<h3>REWARD LUXURY CHRONOGRAPH</h3>
+<p>Sport va klassik uslub uyg‘unligidagi erkaklar soati.</p>
+<span class="price">700 000 so‘m</span>
+<p class="delivery">Yetkazib berish: 15 kun</p>
 
-        <img class="main" src="reward.jpg" alt="Reward erkaklar soati">
+<details>
+<summary>Batafsil ma’lumot va rasmlar</summary>
+<ul class="specs">
+<li>Erkaklar uchun dizayn</li>
+<li>Sana ko‘rsatkichi</li>
+<li>Kvars mexanizm</li>
+<li>3 BAR suvga chidamlilik</li>
+</ul>
+<div class="gallery">
+<img src="reward.jpg" alt="Reward soati 1">
+<img src="reward1.jpg" alt="Reward soati 2">
+<img src="reward2.jpg" alt="Reward soati 3">
+</div>
+<video controls preload="metadata" style="width:100%;margin-top:10px">
+<source src="reward4.mp4" type="video/mp4">
+Brauzeringiz videoni qo‘llab-quvvatlamaydi.
+</video>
+</details>
 
-        <h3>REWARD LUXURY CHRONOGRAPH</h3>
+<button class="button" type="button"
+onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
+BUYURTMA BERISH
+</button>
+</article>
 
-        <p>Sport va klassik uslub uyg‘unligidagi erkaklar soati.</p>
+<!-- 2-SOAT -->
+<article class="product">
+<img class="main" src="tissot.webp" alt="Tissot uslubidagi soat">
+<h3>TISSOT PRX USLUBIDA</h3>
+<p>Zamonaviy va nafis ko‘rinishdagi erkaklar soati.</p>
+<span class="price">300 000 so‘m</span>
+<p class="delivery">Yetkazib berish: 15 kun</p>
 
-        <span class="price">700 000 so‘m</span>
+<details>
+<summary>Batafsil ma’lumot va rasmlar</summary>
+<ul class="specs">
+<li>Zamonaviy klassik dizayn</li>
+<li>Metall braslet</li>
+<li>Kvars mexanizm</li>
+<li>3 BAR suvga chidamlilik</li>
+</ul>
+<div class="gallery">
+<img src="tissot.webp" alt="Tissot uslubidagi soat 1">
+<img src="tissot1.webp" alt="Tissot uslubidagi soat 2">
+<img src="tissot2.webp" alt="Tissot uslubidagi soat 3">
+<img src="tissot3.webp" alt="Tissot uslubidagi soat 4">
+<img src="tissot4.webp" alt="Tissot uslubidagi soat 5">
+</div>
+<video controls preload="metadata" style="width:100%;margin-top:10px">
+<source src="tissot5.mp4" type="video/mp4">
+Brauzeringiz videoni qo‘llab-quvvatlamaydi.
+</video>
+</details>
 
-        <p class="delivery">Yetkazib berish: 15 kun</p>
+<button class="button" type="button"
+onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
+BUYURTMA BERISH
+</button>
+</article>
 
-        <details>
-          <summary>Batafsil ma’lumot va rasmlar</summary>
+<!-- 3-SOAT: YANGI SOAT -->
+<article class="product">
+<img class="main" src="1.jpg" alt="Klassik erkaklar soati">
+<span class="tag">YANGI MAHSULOT</span>
+<h3>KLASSIK ERKAKLAR SOATI</h3>
+<p>Klassik dizayn, metall braslet va sana ko‘rsatkichi.</p>
+<span class="price">500 000 so‘m</span>
+<p class="delivery">Yetkazib berish: 15 kun</p>
 
-          <ul class="specs">
-            <li>Sana ko‘rsatkichi</li>
-            <li>Kvars mexanizm</li>
-            <li>3 BAR suvga chidamlilik</li>
-          </ul>
+<details>
+<summary>Barcha rasmlar va xususiyatlar</summary>
 
-          <div class="gallery">
-            <img src="reward.jpg" alt="Reward soati 1">
-            <img src="reward1.jpg" alt="Reward soati 2">
-            <img src="reward2.jpg" alt="Reward soati 3">
-          </div>
+<div class="gallery">
+<img src="1.jpg" alt="Yangi soat rasmi 1">
+<img src="2.jpg" alt="Yangi soat rasmi 2">
+<img src="3.jpg" alt="Yangi soat rasmi 3">
+<img src="4.jpg" alt="Yangi soat rasmi 4">
+<img src="5.jpg" alt="Yangi soat rasmi 5">
+<img src="6.jpg" alt="Yangi soat rasmi 6">
+<img src="7.jpg" alt="Yangi soat rasmi 7">
+</div>
 
-          <video controls style="width:100%;margin-top:10px;background:#080808" preload="metadata">
-            <source src="reward4.mp4" type="video/mp4">
-            Brauzeringiz video formatini qo‘llab-quvvatlamaydi.
-          </video>
-        </details>
+<h4 style="margin:18px 0 8px;color:#fff">Texnik xususiyatlari</h4>
+<ul class="specs">
+<li>Siferblat diametri: 45 mm</li>
+<li>Ko‘rsatish turi: strelkali</li>
+<li>Suvga chidamlilik: 3 BAR</li>
+<li>Mexanizm: kvars</li>
+<li>Korpus materiali: metall qotishmasi</li>
+<li>Braslet materiali: zanglamas po‘lat</li>
+<li>Korpus shakli: dumaloq</li>
+<li>Qo‘shimcha funksiya: sana ko‘rsatkichi</li>
+<li>Braslet kengligi: 24 mm</li>
+<li>Korpus qalinligi: 8 mm</li>
+<li>Qulf turi: kapalak shaklidagi qulf</li>
+<li>Siferblat oynasi: shisha</li>
+<li>Mo‘ljallangan foydalanuvchi: erkaklar</li>
+<li>Braslet uzunligi: 25 sm</li>
+<li>Ishlab chiqarilgan hudud: Xitoy, Guandun</li>
+<li>Og‘irligi: 165 gramm</li>
+<li>Yetkazib beruvchi ma’lumotidagi brend: X-GEQCK</li>
+<li>Quti: to‘plamga kiritilmagan</li>
+</ul>
 
-        <button class="button" type="button"
-          onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
-          Buyurtma berish
-        </button>
+<h4 style="margin:18px 0 8px;color:#fff">Qadoqlash va yetkazib berish</h4>
+<ul class="specs">
+<li>Mahsulot turi: 1 dona soat</li>
+<li>Qadoq o‘lchami: 13 × 8 × 5 sm</li>
+<li>Qadoqdagi og‘irligi: 165 gramm</li>
+<li>Yetkazib berish muddati: 15 kun</li>
+</ul>
 
-      </article>
+<p style="color:#888;font-size:12px;margin-top:12px">
+Eslatma: 3 BAR suvga chidamlilik suzish yoki dush uchun mo‘ljallanmagan.
+Xususiyatlar yetkazib beruvchi taqdim etgan ma’lumotlar asosida yozilgan.
+</p>
+</details>
 
-      <!-- IKKINCHI SOAT -->
-      <article class="product">
+<button class="button" type="button"
+onclick="selectWatch('Klassik erkaklar soati — 500 000 so‘m')">
+BUYURTMA BERISH
+</button>
+</article>
 
-        <img class="main" src="tissot.webp" alt="Tissot uslubidagi soat">
+</div>
+</section>
 
-        <h3>TISSOT PRX USLUBIDA</h3>
+<!-- BUYURTMA FORMASI -->
+<section class="order-section" id="buyurtma">
+<div class="heading">
+<h2>BUYURTMA BERISH</h2>
+<p>Ma’lumotlaringizni kiriting.</p>
+</div>
 
-        <p>Zamonaviy va nafis ko‘rinishdagi erkaklar soati.</p>
+<p class="note">
+Barcha soatlar uchun yetkazib berish muddati 15 kun.
+Buyurtma yuborishning o‘zi to‘lovni amalga oshirmaydi.
+To‘lov va yetkazib berish tafsilotlarini sotuvchi bilan tasdiqlang.
+</p>
 
-        <span class="price">300 000 so‘m</span>
+<form id="orderForm">
 
-        <p class="delivery">Yetkazib berish: 15 kun</p>
+<label for="watch">Tanlangan soat</label>
+<select id="watch" required>
+<option value="REWARD LUXURY CHRONOGRAPH — 700 000 so‘m">REWARD — 700 000 so‘m</option>
+<option value="TISSOT PRX uslubida — 300 000 so‘m">TISSOT uslubida — 300 000 so‘m</option>
+<option value="Klassik erkaklar soati — 500 000 so‘m">Klassik soat — 500 000 so‘m</option>
+</select>
 
-        <details>
-          <summary>Batafsil ma’lumot va rasmlar</summary>
+<label for="name">Ismingiz</label>
+<input id="name" name="name" required placeholder="Ismingiz">
 
-          <ul class="specs">
-            <li>Metall braslet</li>
-            <li>Kvars mexanizm</li>
-            <li>3 BAR suvga chidamlilik</li>
-          </ul>
+<label for="surname">Familiyangiz</label>
+<input id="surname" name="surname" required placeholder="Familiyangiz">
 
-          <div class="gallery">
-            <img src="tissot.webp" alt="Tissot uslubidagi soat 1">
-            <img src="tissot1.webp" alt="Tissot uslubidagi soat 2">
-            <img src="tissot2.webp" alt="Tissot uslubidagi soat 3">
-            <img src="tissot3.webp" alt="Tissot uslubidagi soat 4">
-            <img src="tissot4.webp" alt="Tissot uslubidagi soat 5">
-          </div>
+<label for="phone">Telefon raqamingiz</label>
+<input id="phone" name="phone" type="tel" required placeholder="+998 90 123 45 67">
 
-        </details>
+<label for="region">Viloyat</label>
+<select id="region" name="region" required>
+<option value="">Viloyatni tanlang</option>
+<option>Toshkent shahri</option>
+<option>Toshkent viloyati</option>
+<option>Samarqand viloyati</option>
+<option>Buxoro viloyati</option>
+<option>Farg‘ona viloyati</option>
+<option>Andijon viloyati</option>
+<option>Namangan viloyati</option>
+<option>Qashqadaryo viloyati</option>
+<option>Surxondaryo viloyati</option>
+<option>Jizzax viloyati</option>
+<option>Sirdaryo viloyati</option>
+<option>Navoiy viloyati</option>
+<option>Xorazm viloyati</option>
+<option>Qoraqalpog‘iston Respublikasi</option>
+</select>
 
-        <button class="button" type="button"
-          onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
-          Buyurtma berish
-        </button>
+<label for="district">Shahar yoki tuman</label>
+<input id="district" name="district" required placeholder="Shahar yoki tuman nomi">
 
-      </article>
+<label for="branch">Yaqin BTS bo‘limi (agar kerak bo‘lsa)</label>
+<input id="branch" name="branch" placeholder="BTS bo‘limi nomi">
 
-      <!-- UCHINCHI SOAT: YANGI MAHSULOT -->
-      <article class="product">
+<label for="comment">Qo‘shimcha izoh</label>
+<textarea id="comment" name="comment" rows="3" placeholder="Ixtiyoriy"></textarea>
 
-        <img class="main" src="1.jpg" alt="Klassik erkaklar soati">
+<button class="button" type="submit">TELEGRAM ORQALI BUYURTMA</button>
+</form>
+</section>
 
-        <span class="tag">Yangi mahsulot</span>
-
-        <h3>KLASSIK ERKAKLAR SOATI</h3>
-
-        <p>Klassik dizayn, metall braslet va sana ko‘rsatkichi bilan.</p>
-
-        <span class="price">500 000 so‘m</span>
-
-        <p class="delivery">Yetkazib berish: 15 kun</p>
-
-        <details>
-          <summary>Barcha rasmlar va xususiyatlar</summary>
-
-          <div class="gallery">
-            <img src="1.jpg" alt="Soat rasmi 1">
-            <img src="2.jpg" alt="Soat rasmi 2">
-            <img src="3.jpg" alt="Soat rasmi 3">
-            <img src="4.jpg" alt="Soat rasmi 4">
-            <img src="5.jpg" alt="Soat rasmi 5">
-            <img src="6.jpg" alt="Soat rasmi 6">
-            <img src="7.jpg" alt="Soat rasmi 7">
-          </div>
-
-          <h4 style="margin:18px 0 8px;color:#fff">
-            Texnik xususiyatlari
-          </h4>
-
-          <ul class="specs">
-            <li>Siferblat diametri: 45 mm</li>
-            <li>Ko‘rsatish turi: strelkali</li>
-            <li>Suvga chidamlilik: 3 BAR</li>
-            <li>Mexanizm: kvars</li>
-            <li>Korpus materiali: metall qotishmasi</li>
-            <li>Braslet materiali: zanglamas po‘lat</li>
-            <li>Korpus shakli: dumaloq</li>
-            <li>Qo‘shimcha funksiya: sana ko‘rsatkichi</li>
-            <li>Braslet kengligi: 24 mm</li>
-            <li>Korpus qalinligi: 8 mm</li>
-            <li>Qulf turi: kapalak shaklidagi qulf</li>
-            <li>Siferblat oynasi: shisha</li>
-            <li>Mo‘ljallangan foydalanuvchi: erkaklar</li>
-            <li>Braslet uzunligi: 25 sm</li>
-            <li>Ishlab chiqarilgan hudud: Xitoy, Guandun</li>
-            <li>Og‘irligi: 165 gramm</li>
-            <li>Mahsulot ma’lumotidagi brend nomi: X-GEQCK</li>
-            <li>Quti: to‘plamga kiritilmagan</li>
-          </ul>
-
-          <h4 style="margin:18px 0 8px;color:#fff">
-            Qadoqlash va yetkazib berish
-          </h4>
-
-          <ul class="specs">
-            <li>Mahsulot turi: 1 dona soat</li>
-            <li>Qadoq o‘lchami: 13 × 8 × 5 sm</li>
-            <li>Qadoqdagi og‘irligi: 165 gramm</li>
-            <li>Yetkazib berish muddati: 15 kun</li>
-          </ul>
-
-          <p style="color:#888;font-size:12px;margin-top:12px">
-            Eslatma: 3 BAR suvga chidamlilik suzish yoki dush uchun
-            mo‘ljallanmagan. Xususiyatlar yetkazib beruvchi taqdim etgan
-            ma’lumotlar asosida yozilgan.
-          </p>
-
-        </details>
-
-        <button class="button" type="button"
-          onclick="selectWatch('Klassik erkaklar soati — 500 000 so‘m')">
-          Buyurtma berish
-        </button>
-
-      </article>
-
-    </div>
-  </section>
-
-  <!-- BUYURTMA FORMASI -->
-  <section class="order-section" id="buyurtma">
-
-    <div class="heading">
-      <h2>BUYURTMA BERISH</h2>
-      <p>Ma’lumotlaringizni kiriting. Buyurtma Telegram orqali yuboriladi.</p>
-    </div>
-
-    <p class="note">
-      Yetkazib berish muddati barcha soatlar uchun 15 kun.
-      Buyurtma yuborish to‘lovni avtomatik amalga oshirmaydi;
-      tafsilotlarni sotuvchi bilan tasdiqlang.
-    </p>
-
-    <form id="orderForm">
-
-      <label for="watch">Tanlangan soat</label>
-
-      <select id="watch" required>
-        <option value="REWARD LUXURY CHRONOGRAPH — 700 000 so‘m">
-          REWARD LUXURY CHRONOGRAPH — 700 000 so‘m
-        </option>
-        <option value="TISSOT PRX uslubida — 300 000 so‘m">
-          TISSOT PRX uslubida — 300 000 so‘m
-        </option>
-        <option value="Klassik erkaklar soati — 500 000 so‘m">
-          Klassik erkaklar soati — 500 000 so‘m
-        </option>
-      </select>
-
-      <label for="name">Ismingiz</label>
-      <input id="name" name="name" required placeholder="Ismingiz">
-
-      <label for="surname">Familiyangiz</label>
-      <input id="surname" name="surname" required placeholder="Familiyangiz">
-
-      <label for="phone">Telefon raqamingiz</label>
-      <input id="phone" name="phone" type="tel" required placeholder="+998 90 123 45 67">
-
-      <label for="region">Viloyat</label>
-
-      <select id="region" name="region" required>
-        <option value="">Viloyatni tanlang</option>
-        <option>Toshkent shahri</option>
-        <option>Toshkent viloyati</option>
-        <option>Samarqand viloyati</option>
-        <option>Buxoro viloyati</option>
-        <option>Farg‘ona viloyati</option>
-        <option>Andijon viloyati</option>
-        <option>Namangan viloyati</option>
-        <option>Qashqadaryo viloyati</option>
-        <option>Surxondaryo viloyati</option>
-        <option>Jizzax viloyati</option>
-        <option>Sirdaryo viloyati</option>
-        <option>Navoiy viloyati</option>
-        <option>Xorazm viloyati</option>
-        <option>Qoraqalpog‘iston Respublikasi</option>
-      </select>
-
-      <label for="branch">Shahar / tuman / BTS bo‘limi</label>
-      <input id="branch" name="branch" required placeholder="Masalan: Gurlan BTS">
-
-      <label for="comment">Qo‘shimcha izoh (ixtiyoriy)</label>
-      <textarea id="comment" name="comment" rows="3" placeholder="Izohingiz"></textarea>
-
-      <button class="button" type="submit">
-        Telegramga buyurtma yuborish
-      </button>
-
-    </form>
-  </section>
-
-  <!-- BREND HAQIDA -->
-  <section id="brend">
-    <div class="about">
-
-      <div class="heading">
-        <h2>ELVOR HAQIDA</h2>
-      </div>
-
-      <p>
-        ELVOR — erkaklar uchun klassik va minimal soatlar yo‘nalishida
-        rivojlanayotgan brend. Maqsadimiz — vaqtni qadrlaydigan insonlarga
-        did bilan tanlangan soatlarni taklif qilish.
-      </p>
-
-    </div>
-  </section>
+<!-- BREND HAQIDA -->
+<section id="brend">
+<div class="about">
+<div class="heading">
+<h2>ELVOR HAQIDA</h2>
+</div>
+<p>
+ELVOR — erkaklar uchun klassik va minimal soatlar yo‘nalishida
+rivojlanayotgan brend. Maqsadimiz — vaqtni qadrlaydigan insonlarga
+did bilan tanlangan soatlarni taklif qilish.
+</p>
+</div>
+</section>
 
 </main>
 
-<footer>
-  © 2026 ELVOR · Barcha huquqlar himoyalangan
-</footer>
+<footer>© 2026 ELVOR · Barcha huquqlar himoyalangan</footer>
 
 <script>
-  function selectWatch(model) {
-    document.getElementById('watch').value = model;
-
-    document.getElementById('buyurtma').scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-
-  document.getElementById('orderForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const fields = {
-      watch: document.getElementById('watch').value,
-      name: document.getElementById('name').value.trim(),
-      surname: document.getElementById('surname').value.trim(),
-      phone: document.getElementById('phone').value.trim(),
-      region: document.getElementById('region').value,
-      branch: document.getElementById('branch').value.trim(),
-      comment: document.getElementById('comment').value.trim()
-    };
-
-    const message = [
-      'Salom! ELVOR saytidan buyurtma:',
-      '',
-      'Soat: ' + fields.watch,
-      'Ism: ' + fields.name,
-      'Familiya: ' + fields.surname,
-      'Telefon: ' + fields.phone,
-      'Viloyat: ' + fields.region,
-      'Shahar/tuman/BTS: ' + fields.branch,
-      'Yetkazib berish: 15 kun',
-      fields.comment ? 'Izoh: ' + fields.comment : ''
-    ].filter(Boolean).join('\n');
-
-    const telegramUrl =
-      'https://t.me/Salihshomurodov?text=' + encodeURIComponent(message);
-
-    window.open(telegramUrl, '_blank', 'noopener');
+function selectWatch(model) {
+  document.getElementById('watch').value = model;
+  document.getElementById('buyurtma').scrollIntoView({
+    behavior: 'smooth'
   });
+}
+
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const watch = document.getElementById('watch').value;
+  const name = document.getElementById('name').value.trim();
+  const surname = document.getElementById('surname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const region = document.getElementById('region').value;
+  const district = document.getElementById('district').value.trim();
+  const branch = document.getElementById('branch').value.trim();
+  const comment = document.getElementById('comment').value.trim();
+
+  const message = [
+    'Salom! ELVOR saytidan buyurtma:',
+    '',
+    'Soat: ' + watch,
+    'Ism: ' + name,
+    'Familiya: ' + surname,
+    'Telefon: ' + phone,
+    'Viloyat: ' + region,
+    'Shahar/tuman: ' + district,
+    branch ? 'BTS bo‘limi: ' + branch : '',
+    'Yetkazib berish muddati: 15 kun',
+    comment ? 'Izoh: ' + comment : ''
+  ].filter(Boolean).join('\n');
+
+  const telegramUrl =
+    'https://t.me/Salihshomurodov?text=' + encodeURIComponent(message);
+
+  window.open(telegramUrl, '_blank', 'noopener');
+});
 </script>
 
 </body>
 </html>
+
