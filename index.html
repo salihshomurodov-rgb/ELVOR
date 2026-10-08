@@ -42,7 +42,6 @@ section{padding:80px 6%}
 .price{font-size:20px;font-weight:600;display:block;margin:16px 0 6px;color:#c5a880;letter-spacing:1px}
 .delivery{font-size:11px!important;color:#999!important;margin:0 0 16px!important;letter-spacing:0.5px}
 
-/* Rang tanlash paneli (Faqat matnli / rang doiralari) */
 .color-picker-block {margin: 12px 0;text-align: left;}
 .color-picker-block label {display: block;font-size: 10px;letter-spacing: 2px;color: #aaa;margin-bottom: 6px;text-transform: uppercase;}
 .color-options {display: flex;gap: 8px;flex-wrap: wrap;}
@@ -70,7 +69,6 @@ form .button:hover{background:#c5a880;border-color:#c5a880;color:#fff}
 .about{max-width:700px;margin:auto;text-align:center;color:#888}
 .about p{margin-top:20px;font-size:14px;line-height:1.8}
 
-/* Footer va aloqa tugmasi dizayni */
 footer{text-align:center;border-top:1px solid rgba(255,255,255,0.05);padding:40px 6%;color:#555;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:#040404}
 .footer-support{margin-bottom:20px}
 .footer-support p{color:#888;font-size:12px;margin-bottom:12px;letter-spacing:1px;text-transform:none}
@@ -115,112 +113,54 @@ form{padding:20px}
 
 <div class="products">
 
-<!-- 1-SOAT -->
+<!-- 1-SOAT: LOUIE JUELEN MECHANICAL AUTO -->
 <article class="product">
-<img class="main" src="reward.jpg" alt="Reward erkaklar soati">
-<h3>REWARD LUXURY CHRONOGRAPH</h3>
-<p>Sport va klassik uslub uyg‘unligidagi mukammal dizayn.</p>
-<span class="price">700 000 so‘m</span>
+<img class="main" src="1.jpg" alt="Louie Juelen mexanik avtomat soati">
+<span class="tag">Premium mexanika</span>
+<h3>LOUIE JUELEN MECHANICAL AUTO</h3>
+<p>Nafis va statusli mexanik avtomat soat. Har bir detallarida mukammallik mujassam.</p>
+<span class="price">532 000 so‘m</span>
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
-<details>
-<summary>Batafsil ma’lumot</summary>
-<ul class="specs">
-<li>Erkaklar uchun dizayn</li>
-<li>Sana ko‘rsatkichi</li>
-<li>Kvars mexanizm</li>
-<li>3 BAR suvga chidamlilik</li>
-</ul>
-<div class="gallery">
-<img src="reward.jpg" alt="Reward 1">
-<img src="reward1.jpg" alt="Reward 2">
-<img src="reward2.jpg" alt="Reward 3">
+<div class="color-picker-block">
+<label>Rangni tanlang: <span id="selectedColorName" style="color:#c5a880">Silver</span></label>
+<div class="color-options">
+<button type="button" class="color-chip active" onclick="changeWatchColor('Silver', this)">Silver</button>
+<button type="button" class="color-chip" onclick="changeWatchColor('Black', this)">Black</button>
 </div>
-<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
-<source src="reward4.mp4" type="video/mp4">
-Brauzeringiz videoni qo‘llab-quvvatlamaydi.
-</video>
-</details>
-
-<button class="button" type="button" onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
-Buyurtma berish
-</button>
-</article>
-
-<!-- 2-SOAT -->
-<article class="product">
-<img class="main" src="tissot.webp" alt="Tissot uslubidagi soat">
-<h3>TISSOT PRX USLUBIDA</h3>
-<p>Zamonaviy va o‘ta nafis ko‘rinishdagi model.</p>
-<span class="price">300 000 so‘m</span>
-<p class="delivery">Yetkazib berish: 15 kun</p>
-
-<details>
-<summary>Batafsil ma’lumot</summary>
-<ul class="specs">
-<li>Zamonaviy klassik dizayn</li>
-<li>Metall braslet</li>
-<li>Kvars mexanizm</li>
-<li>3 BAR suvga chidamlilik</li>
-</ul>
-<div class="gallery">
-<img src="tissot.webp" alt="Tissot 1">
-<img src="tissot1.webp" alt="Tissot 2">
-<img src="tissot2.webp" alt="Tissot 3">
-<img src="tissot3.webp" alt="Tissot 4">
-<img src="tissot4.webp" alt="Tissot 5">
-</div>
-<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
-<source src="tissot5.mp4" type="video/mp4">
-Brauzeringiz videoni qo‘llab-quvvatlamaydi.
-</video>
-</details>
-
-<button class="button" type="button" onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
-Buyurtma berish
-</button>
-</article>
-
-<!-- 3-SOAT -->
-<article class="product">
-<img class="main" src="1.jpg" alt="Klassik erkaklar soati">
-<span class="tag">Kolleksiya</span>
-<h3>KLASSIK ERKAKLAR SOATI</h3>
-<p>Klassik siluet, mustahkam metall braslet va sana funksiyasi.</p>
-<span class="price">500 000 so‘m</span>
-<p class="delivery">Yetkazib berish: 15 kun</p>
-
-<details>
-<summary>Batafsil ma’lumot</summary>
-<div class="gallery">
-<img src="1.jpg" alt="Soat 1">
-<img src="2.jpg" alt="Soat 2">
-<img src="3.jpg" alt="Soat 3">
-<img src="4.jpg" alt="Soat 4">
-<img src="5.jpg" alt="Soat 5">
-<img src="6.jpg" alt="Soat 6">
-<img src="7.jpg" alt="Soat 7">
 </div>
 
+<details>
+<summary>Batafsil ma’lumot va xususiyatlar</summary>
+<div class="gallery">
+<img src="1.jpg" alt="Louie Juelen 1">
+<img src="2.jpg" alt="Louie Juelen 2">
+<img src="3.jpg" alt="Louie Juelen 3">
+<img src="4.jpg" alt="Louie Juelen 4">
+<img src="5.jpg" alt="Louie Juelen 5">
+<img src="6.jpg" alt="Louie Juelen 6">
+</div>
 <h4 style="margin:16px 0 6px;color:#fff;font-size:12px;letter-spacing:1px;text-transform:uppercase">Texnik xususiyatlari</h4>
 <ul class="specs">
-<li>Siferblat diametri: 45 mm</li>
-<li>Ko‘rsatish turi: strelkali</li>
-<li>Suvga chidamlilik: 3 BAR</li>
-<li>Mexanizm: kvars</li>
-<li>Korpus materiali: metall qotishmasi</li>
-<li>Braslet materiali: zanglamas po‘lat</li>
-<li>Qo‘shimcha funksiya: sana ko‘rsatkichi</li>
-<li>Og‘irligi: 165 gramm</li>
+<li>Mexanizm turi: Mexanik avtomat (Mechanical Auto)</li>
+<li>Siferblat diametri: 43 mm</li>
+<li>Korpus materiali: Qotishma va zanglamas po‘lat</li>
+<li>Tasmasi materiali: Zanglamas po‘lat (Stainless Steel)</li>
+<li>Suvga chidamlilik chuqurligi: 3 BAR (Suv sachrashiga chidamli)</li>
+<li>Shisha turi: Mineral shisha (Mineral glass)</li>
+<li>Korpus qalinligi: 15 mm</li>
+<li>Qo‘shimcha funksiyalar: Kun/Sana ko‘rsatkichi, qorong‘uda yorituvchi strelkalar (Luminous Hands)</li>
+<li>Qulf turi: Kapalaksimon ishonchli qulf (Butterfly Clasp)</li>
+<li>Uslub: Hashamatli, biznes, zamonaviy va oqlangan</li>
 </ul>
 </details>
 
-<button class="button" type="button" onclick="selectWatch('Klassik erkaklar soati — 500 000 so‘m')">
+<button class="button" type="button" onclick="selectWatchWithColor()">
 Buyurtma berish
 </button>
 </article>
 
-<!-- 4-SOAT: REWARD FASHION SILICONE (FAFAQAT RANG TANLASH) -->
+<!-- 2-SOAT: REWARD FASHION SILICONE -->
 <article class="product">
 <img class="main" src="q.jpg" alt="REWARD Fashion Silicone Quartz Watch">
 <span class="tag">Yangi mahsulot</span>
@@ -229,57 +169,26 @@ Buyurtma berish
 <span class="price">377 000 so‘m</span>
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
-<!-- Rang tanlash tugmalari (rasmga bog'lanmagan) -->
-<div class="color-picker-block">
-<label>Rangni tanlang: <span id="selectedColorName" style="color:#c5a880">Gold blue</span></label>
-<div class="color-options">
-<button type="button" class="color-chip active" onclick="changeWatchColor('Gold blue', this)">Gold blue</button>
-<button type="button" class="color-chip" onclick="changeWatchColor('Gray', this)">Gray</button>
-<button type="button" class="color-chip" onclick="changeWatchColor('White', this)">White</button>
-<button type="button" class="color-chip" onclick="changeWatchColor('Blue', this)">Blue</button>
-<button type="button" class="color-chip" onclick="changeWatchColor('Black', this)">Black</button>
-</div>
-</div>
-
 <details>
 <summary>Batafsil ma’lumot va xususiyatlar</summary>
-
 <div class="gallery">
 <img src="q.jpg" alt="Reward rang 1">
 <img src="r.jpg" alt="Reward rang 2">
 <img src="t.jpg" alt="Reward rang 3">
 <img src="w.jpg" alt="Reward rang 4">
 </div>
-
-<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
-<source src="QWERTY.html" type="video/mp4">
-Brauzeringiz videoni qo‘llab-quvvatlamaydi.
-</video>
-
 <h4 style="margin:16px 0 6px;color:#fff;font-size:12px;letter-spacing:1px;text-transform:uppercase">Texnik xususiyatlari</h4>
 <ul class="specs">
-<li>Siferblat diametri: 41 mm (1.61 dyuym)</li>
-<li>Ko‘rsatish turi: Analog (strelkali)</li>
-<li>Suvga chidamlilik chuqurligi: 3 BAR (Suv sachrashiga chidamli)</li>
-<li>Mexanizm: Kvars (CHENLONG)</li>
+<li>Siferblat diametri: 41 mm</li>
+<li>Mexanizm: Kvars (Quartz)</li>
+<li>Suvga chidamlilik: 3 BAR</li>
 <li>Korpus materiali: Zanglamas po‘lat</li>
-<li>Tasmasi materiali: Silikon</li>
-<li>Korpus shakli: Dumaloq</li>
-<li>Qo‘shimcha funksiyalar: Xronograf, suvga chidamli, yorug‘lik (Luminous), fon nuri, strelka yoritgichi, sekundomer</li>
-<li>Uslub: Hashamatli, biznes, sport, oqlangan, fashion</li>
-<li>Tasma kengligi: 23 × 18 mm</li>
-<li>Korpus qalinligi: 8.7 mm</li>
-<li>Qulf turi: Tugmali yashirin qulf (Push Button Hidden Clasp)</li>
-<li>Siferblat oynasi: Hardlex (mustahkamlangan shisha)</li>
-<li>Mo‘ljallangan: Erkaklar uchun</li>
-<li>Tasma uzunligi: 245 mm (9.65 dyuym)</li>
-<li>Batareya quvvati: 1-2 yil</li>
-<li>Og‘irligi: 100 gramm</li>
-<li>Ishlab chiqarilgan joyi: Guandun, Xitoy</li>
+<li>Tasmasi: Silikon</li>
+<li>Qo‘shimcha: Xronograf va yorug‘lik effektli strelkalar</li>
 </ul>
 </details>
 
-<button class="button" type="button" onclick="selectWatchWithColor()">
+<button class="button" type="button" onclick="selectWatch('REWARD FASHION SILICONE — 377 000 so‘m')">
 Buyurtma berish
 </button>
 </article>
@@ -295,17 +204,15 @@ Buyurtma berish
 </div>
 
 <p class="note">
-Barcha soatlar uchun yetkazib berish muddati — 15 kun. Forma yuborilgandan so‘ng ma’lumotlar to‘g‘ridan-to‘g‘ri menejerga yuboriladi.
+Barcha soatlar uchun yetkazib berish muddati — 15 kun. BTS pochta xizmatining mavjud bo‘limlarini tanlashingiz mumkin.
 </p>
 
 <form id="orderForm">
 
 <label for="watch">Tanlangan soat</label>
 <select id="watch" required>
-<option value="REWARD LUXURY CHRONOGRAPH — 700 000 so‘m">REWARD LUXURY — 700 000 so‘m</option>
-<option value="TISSOT PRX uslubida — 300 000 so‘m">TISSOT uslubida — 300 000 so‘m</option>
-<option value="Klassik erkaklar soati — 500 000 so‘m">Klassik erkaklar soati — 500 000 so‘m</option>
-<option value="REWARD FASHION SILICONE (Gold blue) — 377 000 so‘m" id="optRewardSilicone">REWARD FASHION SILICONE (Gold blue) — 377 000 so‘m</option>
+<option value="LOUIE JUELEN MECHANICAL AUTO (Silver) — 532 000 so‘m" id="optLouieJuelen">LOUIE JUELEN MECHANICAL AUTO (Silver) — 532 000 so‘m</option>
+<option value="REWARD FASHION SILICONE — 377 000 so‘m">REWARD FASHION SILICONE — 377 000 so‘m</option>
 </select>
 
 <label for="name">Ism</label>
@@ -317,30 +224,34 @@ Barcha soatlar uchun yetkazib berish muddati — 15 kun. Forma yuborilgandan so�
 <label for="phone">Telefon raqam</label>
 <input id="phone" name="phone" type="tel" required placeholder="+998 90 123 45 67">
 
-<label for="region">Viloyat</label>
-<select id="region" name="region" required>
+<label for="region">Viloyatni tanlang</label>
+<select id="region" name="region" required onchange="updateBtsBranches()">
 <option value="">Viloyatni tanlang</option>
-<option>Toshkent shahri</option>
-<option>Toshkent viloyati</option>
-<option>Samarqand viloyati</option>
-<option>Buxoro viloyati</option>
-<option>Farg‘ona viloyati</option>
-<option>Andijon viloyati</option>
-<option>Namangan viloyati</option>
-<option>Qashqadaryo viloyati</option>
-<option>Surxondaryo viloyati</option>
-<option>Jizzax viloyati</option>
-<option>Sirdaryo viloyati</option>
-<option>Navoiy viloyati</option>
-<option>Xorazm viloyati</option>
-<option>Qoraqalpog‘iston Respublikasi</option>
+<option value="Toshkent shahri">Toshkent shahri</option>
+<option value="Toshkent viloyati">Toshkent viloyati</option>
+<option value="Samarqand viloyati">Samarqand viloyati</option>
+<option value="Buxoro viloyati">Buxoro viloyati</option>
+<option value="Farg‘ona viloyati">Farg‘ona viloyati</option>
+<option value="Andijon viloyati">Andijon viloyati</option>
+<option value="Namangan viloyati">Namangan viloyati</option>
+<option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+<option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
+<option value="Jizzax viloyati">Jizzax viloyati</option>
+<option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+<option value="Navoiy viloyati">Navoiy viloyati</option>
+<option value="Xorazm viloyati">Xorazm viloyati</option>
+<option value="Qoraqalpog‘iston Respublikasi">Qoraqalpog‘iston Respublikasi</option>
 </select>
 
 <label for="district">Shahar / Tuman</label>
-<input id="district" name="district" required placeholder="Shahar yoki tuman nomi">
+<select id="district" name="district" required onchange="updateBtsList()">
+<option value="">Avval viloyatni tanlang</option>
+</select>
 
-<label for="branch">BTS bo‘limi (agar kerak bo‘lsa)</label>
-<input id="branch" name="branch" placeholder="BTS filiali manzili">
+<label for="branch">BTS pochta filiali (mavjud filialni tanlang)</label>
+<select id="branch" name="branch" required>
+<option value="">Avval tuman / shaharni tanlang</option>
+</select>
 
 <label for="comment">Qo‘shimcha izoh</label>
 <textarea id="comment" name="comment" rows="3" placeholder="Istaklaringiz (ixtiyoriy)"></textarea>
@@ -372,7 +283,7 @@ ELVOR — o‘ziga xos uslub va vaqt qadrini biluvchilar uchun yaratilgan maxsus
 </footer>
 
 <script>
-let currentSelectedColor = 'Gold blue';
+let currentSelectedColor = 'Silver';
 
 function changeWatchColor(colorName, btnElement) {
   document.getElementById('selectedColorName').innerText = colorName;
@@ -382,24 +293,136 @@ function changeWatchColor(colorName, btnElement) {
   buttons.forEach(b => b.classList.remove('active'));
   btnElement.classList.add('active');
 
-  const option = document.getElementById('optRewardSilicone');
-  option.value = `REWARD FASHION SILICONE (${colorName}) — 377 000 so‘m`;
-  option.textContent = `REWARD FASHION SILICONE (${colorName}) — 377 000 so‘m`;
+  const option = document.getElementById('optLouieJuelen');
+  option.value = `LOUIE JUELEN MECHANICAL AUTO (${colorName}) — 532 000 so‘m`;
+  option.textContent = `LOUIE JUELEN MECHANICAL AUTO (${colorName}) — 532 000 so‘m`;
 }
 
 function selectWatch(model) {
   document.getElementById('watch').value = model;
-  document.getElementById('buyurtma').scrollIntoView({
-    behavior: 'smooth'
-  });
+  document.getElementById('buyurtma').scrollIntoView({ behavior: 'smooth' });
 }
 
 function selectWatchWithColor() {
   const selectElem = document.getElementById('watch');
-  selectElem.value = `REWARD FASHION SILICONE (${currentSelectedColor}) — 377 000 so‘m`;
-  document.getElementById('buyurtma').scrollIntoView({
-    behavior: 'smooth'
-  });
+  selectElem.value = `LOUIE JUELEN MECHANICAL AUTO (${currentSelectedColor}) — 532 000 so‘m`;
+  document.getElementById('buyurtma').scrollIntoView({ behavior: 'smooth' });
+}
+
+// BTS pochta filiallari va tumanlar bazasi
+const btsData = {
+  "Toshkent shahri": {
+    "Chilonzor tumani": ["BTS Chilonzor (Qatortol)", "BTS Bunyodkor"],
+    "Yunusobod tumani": ["BTS Yunusobod (Universam)", "BTS Mega Planet"],
+    "Mirzo Ulug‘bek tumani": ["BTS Buyuk Ipak Yo‘li", "BTS TTZ"],
+    "Yakkasaroy tumani": ["BTS Bobur ko‘chasi", "BTS Grand Mir"],
+    "Mirobod tumani": ["BTS Oybek", "BTS Nukus"],
+    "Uchtepa tumani": ["BTS Farhod bozori", "BTS Uchtepa hokimiyati"],
+    "Shayxontohur tumani": ["BTS Chorsu", "BTS Labzak"],
+    "Olmazor tumani": ["BTS Beruniy", "BTS Qoraqamish"]
+  },
+  "Toshkent viloyati": {
+    "Chirchiq shahri": ["BTS Chirchiq Markaziy filiali"],
+    "Angren shahri": ["BTS Angren filiali"],
+    "Olmaliq shahri": ["BTS Olmaliq filiali"],
+    "Yangiyo‘l shahri": ["BTS Yangiyo‘l filiali"],
+    "Bekobod shahri": ["BTS Bekobod filiali"],
+    "Zangiota tumani": ["BTS Keles filiali"],
+    "Qibray tumani": ["BTS Qibray filiali"]
+  },
+  "Samarqand viloyati": {
+    "Samarqand shahri": ["BTS Samarqand Markaziy (Universitet)", "BTS Gagarin"],
+    "Kattaqo‘rg‘on shahri": ["BTS Kattaqo‘rg‘on filiali"],
+    "Urgut tumani": ["BTS Urgut filiali"]
+  },
+  "Buxoro viloyati": {
+    "Buxoro shahri": ["BTS Buxoro Markaziy filiali"],
+    "G‘ijduvon tumani": ["BTS G‘ijduvon filiali"]
+  },
+  "Farg‘ona viloyati": {
+    "Farg‘ona shahri": ["BTS Farg‘ona Markaziy filiali"],
+    "Qo‘qon shahri": ["BTS Qo‘qon filiali"],
+    "Marg‘ilon shahri": ["BTS Marg‘ilon filiali"]
+  },
+  "Andijon viloyati": {
+    "Andijon shahri": ["BTS Andijon Markaziy filiali"],
+    "Asaka shahri": ["BTS Asaka filiali"]
+  },
+  "Namangan viloyati": {
+    "Namangan shahri": ["BTS Namangan Markaziy filiali"],
+    "Chust tumani": ["BTS Chust filiali"]
+  },
+  "Qashqadaryo viloyati": {
+    "Qarshi shahri": ["BTS Qarshi Markaziy filiali"],
+    "Shahrisabz shahri": ["BTS Shahrisabz filiali"]
+  },
+  "Surxondaryo viloyati": {
+    "Termiz shahri": ["BTS Termiz Markaziy filiali"],
+    "Denov tumani": ["BTS Denov filiali"]
+  },
+  "Jizzax viloyati": {
+    "Jizzax shahri": ["BTS Jizzax Markaziy filiali"]
+  },
+  "Sirdaryo viloyati": {
+    "Guliston shahri": ["BTS Guliston Markaziy filiali"],
+    "Yangiyer shahri": ["BTS Yangiyer filiali"]
+  },
+  "Navoiy viloyati": {
+    "Navoiy shahri": ["BTS Navoiy Markaziy filiali"],
+    "Zarafshon shahri": ["BTS Zarafshon filiali"]
+  },
+  "Xorazm viloyati": {
+    "Urganch shahri": ["BTS Urganch Markaziy filiali"],
+    "Xiva shahri": ["BTS Xiva filiali"]
+  },
+  "Qoraqalpog‘iston Respublikasi": {
+    "Nukus shahri": ["BTS Nukus Markaziy filiali"],
+    "To‘rtko‘l tumani": ["BTS To‘rtko‘l filiali"]
+  }
+};
+
+function updateBtsBranches() {
+  const regionSelect = document.getElementById('region');
+  const districtSelect = document.getElementById('district');
+  const branchSelect = document.getElementById('branch');
+  
+  const selectedRegion = regionSelect.value;
+  
+  districtSelect.innerHTML = '<option value="">Tumanni tanlang</option>';
+  branchSelect.innerHTML = '<option value="">Avval tumanni tanlang</option>';
+  
+  if (selectedRegion && btsData[selectedRegion]) {
+    const districts = Object.keys(btsData[selectedRegion]);
+    districts.forEach(district => {
+      const opt = document.createElement('option');
+      opt.value = district;
+      opt.textContent = district;
+      districtSelect.appendChild(opt);
+    });
+  } else {
+    districtSelect.innerHTML = '<option value="">Avval viloyatni tanlang</option>';
+  }
+}
+
+function updateBtsList() {
+  const regionSelect = document.getElementById('region');
+  const districtSelect = document.getElementById('district');
+  const branchSelect = document.getElementById('branch');
+  
+  const selectedRegion = regionSelect.value;
+  const selectedDistrict = districtSelect.value;
+  
+  branchSelect.innerHTML = '<option value="">Filialni tanlang</option>';
+  
+  if (selectedRegion && selectedDistrict && btsData[selectedRegion][selectedDistrict]) {
+    const branches = btsData[selectedRegion][selectedDistrict];
+    branches.forEach(branch => {
+      const opt = document.createElement('option');
+      opt.value = branch;
+      opt.textContent = branch;
+      branchSelect.appendChild(opt);
+    });
+  }
 }
 
 document.getElementById('orderForm').addEventListener('submit', function(event) {
@@ -423,14 +446,12 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     'Telefon: ' + phone,
     'Viloyat: ' + region,
     'Shahar/tuman: ' + district,
-    branch ? 'BTS bo‘limi: ' + branch : '',
+    'BTS filiali: ' + branch,
     'Yetkazib berish muddati: 15 kun',
     comment ? 'Izoh: ' + comment : ''
   ].filter(Boolean).join('\n');
 
-  const telegramUrl =
-    'https://t.me/Salihshomurodov?text=' + encodeURIComponent(message);
-
+  const telegramUrl = 'https://t.me/Salihshomurodov?text=' + encodeURIComponent(message);
   window.open(telegramUrl, '_blank', 'noopener');
 });
 </script>
