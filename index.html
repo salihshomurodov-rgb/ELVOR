@@ -4,59 +4,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050505">
-<title>ELVOR — Premium erkaklar soatlari</title>
+<meta name="theme-color" content="#030303">
+<title>ELVOR — High-End Luxury Timepieces</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#f5f5f5;line-height:1.6}
-header{position:sticky;top:0;z-index:10;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #292929;background:rgba(5,5,5,.97)}
-.logo{font-size:25px;font-weight:bold;letter-spacing:6px;color:#fff;text-decoration:none}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#ccc;text-decoration:none;font-size:12px;letter-spacing:1px}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#030303;color:#e5e5e5;line-height:1.7;overflow-x:hidden}
+
+header{position:sticky;top:0;z-index:100;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:rgba(3,3,3,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-family:'Cinzel',serif;font-size:24px;font-weight:600;letter-spacing:8px;color:#fff;text-decoration:none;transition:opacity .3s}
+.logo:hover{opacity:.8}
+nav{display:flex;gap:24px;flex-wrap:wrap}
+nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .3s}
 nav a:hover{color:#fff}
-.hero{text-align:center;padding:78px 20px;background:radial-gradient(ellipse at center,#222 0%,#050505 72%)}
-.eyebrow{color:#aaa;font-size:11px;letter-spacing:4px;text-transform:uppercase}
-.hero h1{font-size:clamp(38px,8vw,72px);letter-spacing:7px;font-weight:400;line-height:1.15;margin:20px 0}
-.hero p{color:#aaa;margin:0 auto 25px;max-width:550px}
-.button{display:inline-block;background:#fff;color:#050505;padding:12px 18px;border:1px solid #fff;text-decoration:none;font-weight:bold;font-size:12px;letter-spacing:1px;cursor:pointer}
-.button:hover{background:#ddd}
-section{padding:55px 6%}
-.heading{text-align:center;margin-bottom:32px}
-.heading h2{font-size:clamp(24px,4vw,34px);font-weight:400;letter-spacing:3px}
-.heading p{color:#888;font-size:13px;margin-top:8px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:20px;max-width:1150px;margin:auto}
-.product{background:#101010;border:1px solid #292929;padding:16px;display:flex;flex-direction:column;min-width:0}
-.product img.main{width:100%;height:275px;object-fit:contain;background:#080808}
-.tag{color:#aaa;font-size:10px;letter-spacing:2px;margin-top:13px;text-transform:uppercase}
-.product h3{font-size:17px;font-weight:500;margin-top:8px}
-.product p{color:#999;font-size:13px;margin-top:8px}
-.price{font-size:23px;font-weight:bold;display:block;margin:14px 0}
-.delivery{font-size:12px!important;color:#ccc!important;margin:0 0 14px!important}
-details{margin:10px 0 16px;color:#bbb;font-size:13px}
-summary{cursor:pointer;color:#fff;padding:9px 0}
+
+.hero{text-align:center;padding:110px 20px;background:radial-gradient(circle at center, rgba(30,30,30,0.6) 0%, rgba(3,3,3,1) 80%);border-bottom:1px solid rgba(255,255,255,0.05)}
+.eyebrow{color:#c5a880;font-size:10px;letter-spacing:5px;text-transform:uppercase;font-weight:500;margin-bottom:15px}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(36px,7vw,68px);letter-spacing:8px;font-weight:400;line-height:1.2;margin:0 0 20px;color:#fff}
+.hero p{color:#888;margin:0 auto 35px;max-width:500px;font-size:14px;letter-spacing:1px}
+
+.button{display:inline-block;background:transparent;color:#fff;padding:14px 28px;border:1px solid rgba(255,255,255,0.3);text-decoration:none;font-weight:500;font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .4s cubic-bezier(0.16, 1, 0.3, 1)}
+.button:hover{background:#fff;color:#030303;border-color:#fff;box-shadow:0 0 25px rgba(255,255,255,0.15)}
+
+section{padding:80px 6%}
+.heading{text-align:center;margin-bottom:50px}
+.heading h2{font-family:'Cinzel',serif;font-size:clamp(24px,4vw,34px);font-weight:400;letter-spacing:4px;color:#fff}
+.heading p{color:#777;font-size:12px;margin-top:10px;letter-spacing:1px}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1200px;margin:auto}
+.product{background:#0a0a0a;border:1px solid rgba(255,255,255,0.06);padding:20px;display:flex;flex-direction:column;transition:border-color .4s, transform .4s}
+.product:hover{border-color:rgba(197,168,128,0.4);transform:translateY(-4px)}
+.product img.main{width:100%;height:320px;object-fit:contain;background:#060606;padding:10px}
+.tag{color:#c5a880;font-size:9px;letter-spacing:3px;margin-top:15px;text-transform:uppercase;font-weight:500}
+.product h3{font-family:'Cinzel',serif;font-size:16px;font-weight:600;margin-top:10px;letter-spacing:1px;color:#fff}
+.product p{color:#777;font-size:12px;margin-top:8px}
+.price{font-size:20px;font-weight:600;display:block;margin:16px 0 6px;color:#c5a880;letter-spacing:1px}
+.delivery{font-size:11px!important;color:#999!important;margin:0 0 16px!important;letter-spacing:0.5px}
+
+details{margin:10px 0 20px;color:#aaa;font-size:12px;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px}
+summary{cursor:pointer;color:#fff;padding:8px 0;letter-spacing:1px;font-size:11px;text-transform:uppercase}
+summary:hover{color:#c5a880}
 .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
-.gallery img{width:100%;height:140px;object-fit:contain;background:#080808;border:1px solid #222}
-.specs{padding-left:18px;line-height:1.9;color:#ccc}
-.product .button{margin-top:auto}
-.order-section{background:#0b0b0b;border-top:1px solid #222;border-bottom:1px solid #222}
-form{max-width:620px;margin:auto;padding:22px;background:#101010;border:1px solid #292929}
-label{display:block;color:#bbb;font-size:11px;letter-spacing:1px;margin:12px 0 5px;text-transform:uppercase}
-input,select,textarea{width:100%;padding:12px;background:#080808;border:1px solid #333;color:#fff;font:inherit;border-radius:0}
-input:focus,select:focus,textarea:focus{outline:1px solid #999}
-form .button{width:100%;margin-top:20px}
-.note{max-width:620px;margin:0 auto 18px;color:#888;font-size:12px}
-.about{max-width:720px;margin:auto;text-align:center;color:#999}
-.about p{margin-top:18px}
-footer{text-align:center;border-top:1px solid #222;padding:25px 6%;color:#666;font-size:11px;letter-spacing:1px}
+.gallery img{width:100%;height:130px;object-fit:contain;background:#050505;border:1px solid rgba(255,255,255,0.04)}
+.specs{padding-left:16px;line-height:2;color:#999}
+.product .button{width:100%;text-align:center;margin-top:auto}
+
+.order-section{background:#060606;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+form{max-width:600px;margin:auto;padding:35px;background:#0a0a0a;border:1px solid rgba(255,255,255,0.08)}
+label{display:block;color:#999;font-size:10px;letter-spacing:2px;margin:18px 0 6px;text-transform:uppercase}
+input,select,textarea{width:100%;padding:14px;background:#040404;border:1px solid rgba(255,255,255,0.1);color:#fff;font:inherit;font-size:13px;border-radius:0;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#c5a880}
+form .button{width:100%;margin-top:25px;background:#fff;color:#030303;border:1px solid #fff}
+form .button:hover{background:#c5a880;border-color:#c5a880;color:#fff}
+.note{max-width:600px;margin:0 auto 20px;color:#777;font-size:11px;letter-spacing:0.5px;text-align:center}
+
+.about{max-width:700px;margin:auto;text-align:center;color:#888}
+.about p{margin-top:20px;font-size:14px;line-height:1.8}
+footer{text-align:center;border-top:1px solid rgba(255,255,255,0.05);padding:30px 6%;color:#555;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+
 @media(max-width:600px){
-header{align-items:flex-start;flex-direction:column;padding:15px 5%}
-nav{gap:12px}
-nav a{font-size:10px}
-section{padding:42px 5%}
-.product img.main{height:235px}
-form{padding:17px}
+header{padding:18px 5%}
+nav{gap:14px}
+section{padding:50px 5%}
+form{padding:20px}
 }
 </style>
 </head>
@@ -66,26 +78,26 @@ form{padding:17px}
 <header>
 <a class="logo" href="#home">ELVOR</a>
 <nav>
-<a href="#home">Bosh sahifa</a>
-<a href="#soatlar">Soatlar</a>
+<a href="#home">Asosiy</a>
+<a href="#soatlar">Kolleksiya</a>
 <a href="#buyurtma">Buyurtma</a>
-<a href="#brend">Brend haqida</a>
+<a href="#brend">Brend</a>
 </nav>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-<div class="eyebrow">ELVOR · Erkaklar soatlari</div>
+<div class="eyebrow">Haute Horlogerie · Erkaklar soatlari</div>
 <h1>VAQT. USLUB.</h1>
-<p>Klassik dizayn. Minimal ko‘rinish. O‘ziga xos xarakter.</p>
-<a class="button" href="#soatlar">KOLLEKSIYANI KO‘RISH</a>
+<p>Klassik dizayn va mukammal minimalizm uyg‘unligi.</p>
+<a class="button" href="#soatlar">Kolleksiyani ko‘rish</a>
 </section>
 
 <section id="soatlar">
 <div class="heading">
-<h2>SOATLAR KOLLEKSIYASI</h2>
-<p>O‘zingizga mos soatni tanlang va buyurtma qoldiring.</p>
+<h2>EKSKLYUZIV KOLLEKSIYA</h2>
+<p>O‘zingizga loyiq mukammal aksessuarni tanlang.</p>
 </div>
 
 <div class="products">
@@ -94,12 +106,12 @@ form{padding:17px}
 <article class="product">
 <img class="main" src="reward.jpg" alt="Reward erkaklar soati">
 <h3>REWARD LUXURY CHRONOGRAPH</h3>
-<p>Sport va klassik uslub uyg‘unligidagi erkaklar soati.</p>
+<p>Sport va klassik uslub uyg‘unligidagi mukammal dizayn.</p>
 <span class="price">700 000 so‘m</span>
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
 <details>
-<summary>Batafsil ma’lumot va rasmlar</summary>
+<summary>Batafsil ma’lumot</summary>
 <ul class="specs">
 <li>Erkaklar uchun dizayn</li>
 <li>Sana ko‘rsatkichi</li>
@@ -107,19 +119,18 @@ form{padding:17px}
 <li>3 BAR suvga chidamlilik</li>
 </ul>
 <div class="gallery">
-<img src="reward.jpg" alt="Reward soati 1">
-<img src="reward1.jpg" alt="Reward soati 2">
-<img src="reward2.jpg" alt="Reward soati 3">
+<img src="reward.jpg" alt="Reward 1">
+<img src="reward1.jpg" alt="Reward 2">
+<img src="reward2.jpg" alt="Reward 3">
 </div>
-<video controls preload="metadata" style="width:100%;margin-top:10px">
+<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
 <source src="reward4.mp4" type="video/mp4">
 Brauzeringiz videoni qo‘llab-quvvatlamaydi.
 </video>
 </details>
 
-<button class="button" type="button"
-onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
-BUYURTMA BERISH
+<button class="button" type="button" onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
+Buyurtma berish
 </button>
 </article>
 
@@ -127,12 +138,12 @@ BUYURTMA BERISH
 <article class="product">
 <img class="main" src="tissot.webp" alt="Tissot uslubidagi soat">
 <h3>TISSOT PRX USLUBIDA</h3>
-<p>Zamonaviy va nafis ko‘rinishdagi erkaklar soati.</p>
+<p>Zamonaviy va o‘ta nafis ko‘rinishdagi model.</p>
 <span class="price">300 000 so‘m</span>
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
 <details>
-<summary>Batafsil ma’lumot va rasmlar</summary>
+<summary>Batafsil ma’lumot</summary>
 <ul class="specs">
 <li>Zamonaviy klassik dizayn</li>
 <li>Metall braslet</li>
@@ -140,47 +151,46 @@ BUYURTMA BERISH
 <li>3 BAR suvga chidamlilik</li>
 </ul>
 <div class="gallery">
-<img src="tissot.webp" alt="Tissot uslubidagi soat 1">
-<img src="tissot1.webp" alt="Tissot uslubidagi soat 2">
-<img src="tissot2.webp" alt="Tissot uslubidagi soat 3">
-<img src="tissot3.webp" alt="Tissot uslubidagi soat 4">
-<img src="tissot4.webp" alt="Tissot uslubidagi soat 5">
+<img src="tissot.webp" alt="Tissot 1">
+<img src="tissot1.webp" alt="Tissot 2">
+<img src="tissot2.webp" alt="Tissot 3">
+<img src="tissot3.webp" alt="Tissot 4">
+<img src="tissot4.webp" alt="Tissot 5">
 </div>
-<video controls preload="metadata" style="width:100%;margin-top:10px">
+<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
 <source src="tissot5.mp4" type="video/mp4">
 Brauzeringiz videoni qo‘llab-quvvatlamaydi.
 </video>
 </details>
 
-<button class="button" type="button"
-onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
-BUYURTMA BERISH
+<button class="button" type="button" onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
+Buyurtma berish
 </button>
 </article>
 
-<!-- 3-SOAT: YANGI SOAT -->
+<!-- 3-SOAT -->
 <article class="product">
 <img class="main" src="1.jpg" alt="Klassik erkaklar soati">
-<span class="tag">YANGI MAHSULOT</span>
+<span class="tag">Yangi mahsulot</span>
 <h3>KLASSIK ERKAKLAR SOATI</h3>
-<p>Klassik dizayn, metall braslet va sana ko‘rsatkichi.</p>
+<p>Klassik siluet, mustahkam metall braslet va sana funksiyasi.</p>
 <span class="price">500 000 so‘m</span>
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
 <details>
-<summary>Barcha rasmlar va xususiyatlar</summary>
+<summary>Batafsil ma’lumot</summary>
 
 <div class="gallery">
-<img src="1.jpg" alt="Yangi soat rasmi 1">
-<img src="2.jpg" alt="Yangi soat rasmi 2">
-<img src="3.jpg" alt="Yangi soat rasmi 3">
-<img src="4.jpg" alt="Yangi soat rasmi 4">
-<img src="5.jpg" alt="Yangi soat rasmi 5">
-<img src="6.jpg" alt="Yangi soat rasmi 6">
-<img src="7.jpg" alt="Yangi soat rasmi 7">
+<img src="1.jpg" alt="Soat 1">
+<img src="2.jpg" alt="Soat 2">
+<img src="3.jpg" alt="Soat 3">
+<img src="4.jpg" alt="Soat 4">
+<img src="5.jpg" alt="Soat 5">
+<img src="6.jpg" alt="Soat 6">
+<img src="7.jpg" alt="Soat 7">
 </div>
 
-<h4 style="margin:18px 0 8px;color:#fff">Texnik xususiyatlari</h4>
+<h4 style="margin:16px 0 6px;color:#fff;font-size:12px;letter-spacing:1px;text-transform:uppercase">Texnik xususiyatlari</h4>
 <ul class="specs">
 <li>Siferblat diametri: 45 mm</li>
 <li>Ko‘rsatish turi: strelkali</li>
@@ -188,37 +198,13 @@ BUYURTMA BERISH
 <li>Mexanizm: kvars</li>
 <li>Korpus materiali: metall qotishmasi</li>
 <li>Braslet materiali: zanglamas po‘lat</li>
-<li>Korpus shakli: dumaloq</li>
 <li>Qo‘shimcha funksiya: sana ko‘rsatkichi</li>
-<li>Braslet kengligi: 24 mm</li>
-<li>Korpus qalinligi: 8 mm</li>
-<li>Qulf turi: kapalak shaklidagi qulf</li>
-<li>Siferblat oynasi: shisha</li>
-<li>Mo‘ljallangan foydalanuvchi: erkaklar</li>
-<li>Braslet uzunligi: 25 sm</li>
-<li>Ishlab chiqarilgan hudud: Xitoy, Guandun</li>
 <li>Og‘irligi: 165 gramm</li>
-<li>Yetkazib beruvchi ma’lumotidagi brend: X-GEQCK</li>
-<li>Quti: to‘plamga kiritilmagan</li>
 </ul>
-
-<h4 style="margin:18px 0 8px;color:#fff">Qadoqlash va yetkazib berish</h4>
-<ul class="specs">
-<li>Mahsulot turi: 1 dona soat</li>
-<li>Qadoq o‘lchami: 13 × 8 × 5 sm</li>
-<li>Qadoqdagi og‘irligi: 165 gramm</li>
-<li>Yetkazib berish muddati: 15 kun</li>
-</ul>
-
-<p style="color:#888;font-size:12px;margin-top:12px">
-Eslatma: 3 BAR suvga chidamlilik suzish yoki dush uchun mo‘ljallanmagan.
-Xususiyatlar yetkazib beruvchi taqdim etgan ma’lumotlar asosida yozilgan.
-</p>
 </details>
 
-<button class="button" type="button"
-onclick="selectWatch('Klassik erkaklar soati — 500 000 so‘m')">
-BUYURTMA BERISH
+<button class="button" type="button" onclick="selectWatch('Klassik erkaklar soati — 500 000 so‘m')">
+Buyurtma berish
 </button>
 </article>
 
@@ -228,14 +214,12 @@ BUYURTMA BERISH
 <!-- BUYURTMA FORMASI -->
 <section class="order-section" id="buyurtma">
 <div class="heading">
-<h2>BUYURTMA BERISH</h2>
-<p>Ma’lumotlaringizni kiriting.</p>
+<h2>BUYURTMA RASMIYALASHTIRISH</h2>
+<p>Ma’lumotlaringizni qoldiring, tez orada bog‘lanamiz.</p>
 </div>
 
 <p class="note">
-Barcha soatlar uchun yetkazib berish muddati 15 kun.
-Buyurtma yuborishning o‘zi to‘lovni amalga oshirmaydi.
-To‘lov va yetkazib berish tafsilotlarini sotuvchi bilan tasdiqlang.
+Barcha soatlar uchun yetkazib berish muddati — 15 kun. Forma yuborilgandan so‘ng ma’lumotlar to‘g‘ridan-to‘g‘ri menejerga yuboriladi.
 </p>
 
 <form id="orderForm">
@@ -247,13 +231,13 @@ To‘lov va yetkazib berish tafsilotlarini sotuvchi bilan tasdiqlang.
 <option value="Klassik erkaklar soati — 500 000 so‘m">Klassik soat — 500 000 so‘m</option>
 </select>
 
-<label for="name">Ismingiz</label>
-<input id="name" name="name" required placeholder="Ismingiz">
+<label for="name">Ism</label>
+<input id="name" name="name" required placeholder="Ismingizni kiriting">
 
-<label for="surname">Familiyangiz</label>
-<input id="surname" name="surname" required placeholder="Familiyangiz">
+<label for="surname">Familiya</label>
+<input id="surname" name="surname" required placeholder="Familiyangizni kiriting">
 
-<label for="phone">Telefon raqamingiz</label>
+<label for="phone">Telefon raqam</label>
 <input id="phone" name="phone" type="tel" required placeholder="+998 90 123 45 67">
 
 <label for="region">Viloyat</label>
@@ -275,16 +259,16 @@ To‘lov va yetkazib berish tafsilotlarini sotuvchi bilan tasdiqlang.
 <option>Qoraqalpog‘iston Respublikasi</option>
 </select>
 
-<label for="district">Shahar yoki tuman</label>
+<label for="district">Shahar / Tuman</label>
 <input id="district" name="district" required placeholder="Shahar yoki tuman nomi">
 
-<label for="branch">Yaqin BTS bo‘limi (agar kerak bo‘lsa)</label>
-<input id="branch" name="branch" placeholder="BTS bo‘limi nomi">
+<label for="branch">BTS bo‘limi (agar kerak bo‘lsa)</label>
+<input id="branch" name="branch" placeholder="BTS filiali manzili">
 
 <label for="comment">Qo‘shimcha izoh</label>
-<textarea id="comment" name="comment" rows="3" placeholder="Ixtiyoriy"></textarea>
+<textarea id="comment" name="comment" rows="3" placeholder="Istaklaringiz (ixtiyoriy)"></textarea>
 
-<button class="button" type="submit">TELEGRAM ORQALI BUYURTMA</button>
+<button class="button" type="submit">Buyurtma berish</button>
 </form>
 </section>
 
@@ -295,9 +279,7 @@ To‘lov va yetkazib berish tafsilotlarini sotuvchi bilan tasdiqlang.
 <h2>ELVOR HAQIDA</h2>
 </div>
 <p>
-ELVOR — erkaklar uchun klassik va minimal soatlar yo‘nalishida
-rivojlanayotgan brend. Maqsadimiz — vaqtni qadrlaydigan insonlarga
-did bilan tanlangan soatlarni taklif qilish.
+ELVOR — o‘ziga xos uslub va vaqt qadrini biluvchilar uchun yaratilgan maxsus brend. Har bir model did va sifat talablaridan kelib chiqqan holda tanlanadi.
 </p>
 </div>
 </section>
@@ -349,4 +331,3 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
 
 </body>
 </html>
-
