@@ -123,7 +123,7 @@ form{padding:20px}
 <p class="delivery">Yetkazib berish: 15 kun</p>
 
 <div class="color-picker-block">
-<label>Rangni tanlang: <span id="selectedColorName" style="color:#c5a880">Silver</span></label>
+<label>Rangni tanlang: <span id="selectedColorName1" style="color:#c5a880">Silver</span></label>
 <div class="color-options">
 <button type="button" class="color-chip active" onclick="changeWatchColor('Silver', this)">Silver</button>
 <button type="button" class="color-chip" onclick="changeWatchColor('Black', this)">Black</button>
@@ -160,7 +160,73 @@ Buyurtma berish
 </button>
 </article>
 
-<!-- 2-SOAT: REWARD FASHION SILICONE -->
+<!-- 2-SOAT: REWARD LUXURY CHRONOGRAPH -->
+<article class="product">
+<img class="main" src="reward.jpg" alt="Reward erkaklar soati">
+<h3>REWARD LUXURY CHRONOGRAPH</h3>
+<p>Sport va klassik uslub uyg‘unligidagi mukammal dizayn.</p>
+<span class="price">700 000 so‘m</span>
+<p class="delivery">Yetkazib berish: 15 kun</p>
+
+<details>
+<summary>Batafsil ma’lumot</summary>
+<ul class="specs">
+<li>Erkaklar uchun dizayn</li>
+<li>Sana ko‘rsatkichi</li>
+<li>Kvars mexanizm</li>
+<li>3 BAR suvga chidamlilik</li>
+</ul>
+<div class="gallery">
+<img src="reward.jpg" alt="Reward 1">
+<img src="reward1.jpg" alt="Reward 2">
+<img src="reward2.jpg" alt="Reward 3">
+</div>
+<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
+<source src="reward4.mp4" type="video/mp4">
+Brauzeringiz videoni qo‘llab-quvvatlamaydi.
+</video>
+</details>
+
+<button class="button" type="button" onclick="selectWatch('REWARD LUXURY CHRONOGRAPH — 700 000 so‘m')">
+Buyurtma berish
+</button>
+</article>
+
+<!-- 3-SOAT: TISSOT PRX USLUBIDA -->
+<article class="product">
+<img class="main" src="tissot.webp" alt="Tissot uslubidagi soat">
+<h3>TISSOT PRX USLUBIDA</h3>
+<p>Zamonaviy va o‘ta nafis ko‘rinishdagi model.</p>
+<span class="price">300 000 so‘m</span>
+<p class="delivery">Yetkazib berish: 15 kun</p>
+
+<details>
+<summary>Batafsil ma’lumot</summary>
+<ul class="specs">
+<li>Zamonaviy klassik dizayn</li>
+<li>Metall braslet</li>
+<li>Kvars mexanizm</li>
+<li>3 BAR suvga chidamlilik</li>
+</ul>
+<div class="gallery">
+<img src="tissot.webp" alt="Tissot 1">
+<img src="tissot1.webp" alt="Tissot 2">
+<img src="tissot2.webp" alt="Tissot 3">
+<img src="tissot3.webp" alt="Tissot 4">
+<img src="tissot4.webp" alt="Tissot 5">
+</div>
+<video controls preload="metadata" style="width:100%;margin-top:12px;border:1px solid rgba(255,255,255,0.1)">
+<source src="tissot5.mp4" type="video/mp4">
+Brauzeringiz videoni qo‘llab-quvvatlamaydi.
+</video>
+</details>
+
+<button class="button" type="button" onclick="selectWatch('TISSOT PRX uslubida — 300 000 so‘m')">
+Buyurtma berish
+</button>
+</article>
+
+<!-- 4-SOAT: REWARD FASHION SILICONE -->
 <article class="product">
 <img class="main" src="q.jpg" alt="REWARD Fashion Silicone Quartz Watch">
 <span class="tag">Yangi mahsulot</span>
@@ -212,6 +278,8 @@ Barcha soatlar uchun yetkazib berish muddati — 15 kun. BTS pochta xizmatining 
 <label for="watch">Tanlangan soat</label>
 <select id="watch" required>
 <option value="LOUIE JUELEN MECHANICAL AUTO (Silver) — 532 000 so‘m" id="optLouieJuelen">LOUIE JUELEN MECHANICAL AUTO (Silver) — 532 000 so‘m</option>
+<option value="REWARD LUXURY CHRONOGRAPH — 700 000 so‘m">REWARD LUXURY CHRONOGRAPH — 700 000 so‘m</option>
+<option value="TISSOT PRX uslubida — 300 000 so‘m">TISSOT PRX uslubida — 300 000 so‘m</option>
 <option value="REWARD FASHION SILICONE — 377 000 so‘m">REWARD FASHION SILICONE — 377 000 so‘m</option>
 </select>
 
@@ -286,7 +354,7 @@ ELVOR — o‘ziga xos uslub va vaqt qadrini biluvchilar uchun yaratilgan maxsus
 let currentSelectedColor = 'Silver';
 
 function changeWatchColor(colorName, btnElement) {
-  document.getElementById('selectedColorName').innerText = colorName;
+  document.getElementById('selectedColorName1').innerText = colorName;
   currentSelectedColor = colorName;
 
   const buttons = btnElement.parentElement.querySelectorAll('.color-chip');
